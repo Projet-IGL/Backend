@@ -13,7 +13,7 @@ class Staff(models.Model):
         return f"{self.nom} {self.prenom}"
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Staff'
 
 class Patient(models.Model):
@@ -24,22 +24,26 @@ class Patient(models.Model):
     adresse = models.CharField(max_length=255)
     telephone = models.CharField(max_length=20)
     mutuelle = models.CharField(max_length=100)
-    medecin_traitant = models.ForeignKey(Staff, on_delete=models.SET_NULL, null=True, related_name="patients")
+    medecin_traitant = models.ForeignKey(Staff, on_delete=models.CASCADE)
     personne_a_contacter = models.CharField(max_length=100)
     telephone_contact = models.CharField(max_length=20)
 
     def __str__(self):
         return f"{self.nom} {self.prenom}"
+    class Meta:
+        db_table = 'Patient'
 
 class DossierPatient(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
-    medecin_traitant = models.ForeignKey(Staff, on_delete=models.SET_NULL, null=True, related_name="dossiers_patient")
     code_qr = models.CharField(max_length=255)
     etat = models.CharField(max_length=20)
-    antecedents = models.TextField()
+    antécédents = models.TextField()
 
     def __str__(self):
         return f"Dossier for {self.patient.nom} {self.patient.prenom}"
+    class Meta:
+        db_table = 'Dossier_patient'
+        
 
 class Consultation(models.Model):
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)

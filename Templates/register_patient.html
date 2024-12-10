@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Patient</title>
+</head>
+<body>
+    <h1>Register a New Patient</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="nss">NSS:</label>
+        <input type="text" id="nss" name="nss" required><br>
+        
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required><br>
+
+        <label for="prenom">Prénom:</label>
+        <input type="text" id="prenom" name="prenom" required><br>
+
+        <label for="date_naissance">Date de Naissance:</label>
+        <input type="date" id="date_naissance" name="date_naissance" required><br>
+
+        <label for="adresse">Adresse:</label>
+        <input type="text" id="adresse" name="adresse" required><br>
+
+        <label for="telephone">Téléphone:</label>
+        <input type="text" id="telephone" name="telephone" required><br>
+
+        <label for="mutuelle">Mutuelle:</label>
+        <input type="text" id="mutuelle" name="mutuelle" required><br>
+
+        <label for="medecin_traitant">Médecin Traitant:</label>
+        <select id="medecin_traitant" name="medecin_traitant" required>
+            {% for medecin in medecins %}
+                <option value="{{ medecin.id }}">{{ medecin.nom }} {{ medecin.prenom }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="personne_a_contacter">Personne à contacter:</label>
+        <input type="text" id="personne_a_contacter" name="personne_a_contacter" required><br>
+
+        <label for="telephone_contact">Téléphone Contact:</label>
+        <input type="text" id="telephone_contact" name="telephone_contact" required><br>
+
+        <button type="submit">Register Patient</button>
+    </form>
+</body>
+</html>
