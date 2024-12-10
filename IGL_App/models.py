@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.hashers import make_password
 class Staff(models.Model):
     nom = models.CharField(max_length=100)
     prenom = models.CharField(max_length=100)
@@ -24,6 +25,7 @@ class Patient(models.Model):
     adresse = models.CharField(max_length=255)
     telephone = models.CharField(max_length=20)
     mutuelle = models.CharField(max_length=100)
+    mot_de_passe = models.CharField(max_length=255, default=make_password('password'))
     medecin_traitant = models.ForeignKey(Staff, on_delete=models.CASCADE)
     personne_a_contacter = models.CharField(max_length=100)
     telephone_contact = models.CharField(max_length=20)
@@ -31,6 +33,7 @@ class Patient(models.Model):
     def __str__(self):
         return f"{self.nom} {self.prenom}"
     class Meta:
+        
         db_table = 'Patient'
 
 class DossierPatient(models.Model):

@@ -114,6 +114,7 @@ def register_patient(request):
         medecin_traitant_id = request.POST['medecin_traitant']
         personne_a_contacter = request.POST['personne_a_contacter']
         telephone_contact = request.POST['telephone_contact']
+        mot_de_passe = request.POST.get('mot_de_passe', '').strip()
         print(f"Form data collected: NSS={nss}, Nom={nom}, Prenom={prenom}, Médecin traitant ID={medecin_traitant_id}")
 
         try:
@@ -141,7 +142,8 @@ def register_patient(request):
                     mutuelle=mutuelle,
                     medecin_traitant=medecin_traitant,
                     personne_a_contacter=personne_a_contacter,
-                    telephone_contact=telephone_contact
+                    telephone_contact=telephone_contact,
+                    mot_de_passe=mot_de_passe,
                 )
                 print(f"Patient created: ID={patient.id}, Name={patient.nom} {patient.prenom}")
 
