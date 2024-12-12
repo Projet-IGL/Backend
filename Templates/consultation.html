@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Consultation</title>
+</head>
+<body>
+    <h1>Create Consultation</h1>
+    <form method="post">
+        {% csrf_token %}
+        
+        <label for="dossier_patient_id">Dossier Patient:</label><br>
+        <select id="dossier_patient_id" name="dossier_patient_id" required>
+            <option value="" disabled selected>Select a dossier</option>
+            {% for dossier in dossier_patients %}
+                <option value="{{ dossier.id }}">{{ dossier.patient.nom }} {{ dossier.patient.prenom }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="date_consultation">Consultation Date:</label><br>
+        <input type="datetime-local" id="date_consultation" name="date_consultation" required><br><br>
+
+        <label for="bilan_prescrit">Prescribed Bilan:</label><br>
+        <textarea id="bilan_prescrit" name="bilan_prescrit" rows="4" cols="50"></textarea><br><br>
+
+        <label for="resume">Résumé:</label><br>
+        <textarea id="resume" name="resume" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

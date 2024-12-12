@@ -1,0 +1,31 @@
+<form method="post">
+    {% csrf_token %}
+
+    <label for="dossier_patient">Dossier Patient:</label>
+    <select id="dossier_patient" name="dossier_patient" required>
+        {% for dossier in dossier_patients %}
+            <option value="{{ dossier.id }}">{{ dossier.patient.nom }} {{ dossier.patient.prenom }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="infirmier">Infirmier:</label>
+    <select id="infirmier" name="infirmier" required>
+        {% for infirmier in infirmiers %}
+            <option value="{{ infirmier.id }}">{{ infirmier.username }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="observation_etat_patient">Observation de l'état du patient:</label>
+    <textarea id="observation_etat_patient" name="observation_etat_patient" required></textarea>
+
+    <label for="medicament_pris">Médicament pris:</label>
+    <input type="checkbox" id="medicament_pris" name="medicament_pris">
+
+    <label for="description_soins">Description des soins:</label>
+    <textarea id="description_soins" name="description_soins" required></textarea>
+
+    <label for="date_soin">Date du soin:</label>
+    <input type="datetime-local" id="date_soin" name="date_soin" required>
+
+    <button type="submit">Ajouter Soin</button>
+</form>

@@ -51,15 +51,18 @@ class DossierPatient(models.Model):
 class Consultation(models.Model):
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
     date_consultation = models.DateTimeField()
-    bilan_prescrit = models.TextField()
-    resume = models.TextField()
+    bilan_prescrit = models.TextField(blank=True, null=True)
+    resume = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f"Consultation for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
+    class Meta:
+        db_table = 'Consultation'
+    
 
 class Soins(models.Model):
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
-    infirmier = models.ForeignKey(Staff, on_delete=models.SET_NULL, null=True, related_name="soins")
+    infirmier = models.ForeignKey('Staff', on_delete=models.CASCADE, limit_choices_to={'role': 'infirmier'})
     observation_etat_patient = models.TextField()
     medicament_pris = models.BooleanField(default=False)
     description_soins = models.TextField()
@@ -67,6 +70,8 @@ class Soins(models.Model):
 
     def __str__(self):
         return f"Soins for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
+    class Meta:
+        db_table = 'Soins'
 
 class Ordonnance(models.Model):
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)

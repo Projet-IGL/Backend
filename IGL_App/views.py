@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Staff
-from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.sessions.models import Session
@@ -8,7 +7,13 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Staff
 from django.db import transaction, IntegrityError
+from .models import Consultation
+from django.utils.timezone import now
 from .models import Patient, DossierPatient, Staff
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import Soins
+from django.contrib.auth.models import User
 
 def login_view(request):
     if request.method == 'POST':
@@ -170,3 +175,77 @@ def register_patient(request):
     medecins = Staff.objects.filter(role='medecin')  # Fetch only médecins
     print(f"Number of médecins found: {medecins.count()}")
     return render(request, 'register_patient.html', {'medecins': medecins})
+
+
+
+
+def create_consultation(request):
+    if request.method == 'POST':
+        try:
+            # Get data from the POST request
+            dossier_patient_id = request.POST.get('dossier_patient_id')
+            date_consultation = request.POST.get('date_consultation', now())  # Use the provided date or default to now
+            bilan_prescrit = request.POST.get('bilan_prescrit', '').strip()
+            resume = request.POST.get('resume', '').strip()
+
+            # Find the corresponding dossier patient
+            try:
+                dossier_patient = DossierPatient.objects.get(id=dossier_patient_id)
+            except DossierPatient.DoesNotExist:
+                messages.error(request, "Dossier patient not found.")
+                return redirect('create_consultation')
+
+            # Create the Consultation object
+            consultation = Consultation.objects.create(
+                dossier_patient=dossier_patient,
+                date_consultation=date_consultation,
+                bilan_prescrit=bilan_prescrit,
+                resume=resume,
+            )
+            messages.success(request, "Consultation created successfully.")
+            return redirect('home')  # Redirect to a relevant page (e.g., the home page or consultation list)
+
+        except Exception as e:
+            messages.error(request, f"An error occurred: {e}")
+            return redirect('create_consultation')
+
+    # For GET requests, render the form
+    dossier_patients = DossierPatient.objects.all()  # Fetch all dossier patients for selection
+    return render(request, 'create_consultation.html', {'dossier_patients': dossier_patients})
+
+
+def ajouter_soin(request):
+    # Récupérer les dossiers des patients et les infirmiers
+    dossier_patients = DossierPatient.objects.all()
+    infirmiers = Staff.objects.filter(role='infirmier')  # Assurez-vous d'avoir un champ "role" pour filtrer les infirmiers
+
+    if request.method == 'POST':
+        # Récupérer les données du formulaire
+        dossier_patient_id = request.POST.get('dossier_patient')
+        infirmier_id = request.POST.get('infirmier')
+        observation_etat_patient = request.POST.get('observation_etat_patient')
+        medicament_pris = request.POST.get('medicament_pris') == 'on'  # Le checkbox envoie "on" si coché
+        description_soins = request.POST.get('description_soins')
+        date_soin = request.POST.get('date_soin')
+
+        try:
+            # Enregistrer les données dans la table Soins
+            soin = Soins.objects.create(
+                dossier_patient_id=dossier_patient_id,
+                infirmier_id=infirmier_id,
+                observation_etat_patient=observation_etat_patient,
+                medicament_pris=medicament_pris,
+                description_soins=description_soins,
+                date_soin=date_soin
+            )
+
+            messages.success(request, 'Soin ajouté avec succès!')
+            return redirect('home')  # Remplacez par l'URL de votre choix
+
+        except Exception as e:
+            messages.error(request, f"Erreur lors de l'ajout du soin: {e}")
+
+    return render(request, 'ajouter_soin.html', {
+        'dossier_patients': dossier_patients,
+        'infirmiers': infirmiers
+    })
