@@ -19,6 +19,8 @@ urllib3 = "==2.2.3"
 yarg = "==0.1.10"
 
 [dev-packages]
+pytest = "*"
+pytest-django = "*"
 
 [requires]
 python_version = "3.13"
