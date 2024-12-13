@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # Utilise le moteur MySQL
         'NAME': 'gestion_dpi',             # Le nom de ta base de données
         'USER': 'root',           # Ton utilisateur MySQL (ex. root)
-        'PASSWORD': 'Besmala2004',      # Le mot de passe MySQL
+        'PASSWORD': 'e3g8dNUe8Agv2F9M',      # Le mot de passe MySQL
         'HOST': 'localhost',                 # Adresse du serveur (localhost)
         'PORT': '3306',                      # Port MySQL (par défaut 3306)
     }

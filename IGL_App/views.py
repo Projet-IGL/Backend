@@ -15,6 +15,21 @@ from django.contrib import messages
 from .models import Soins
 from django.contrib.auth.models import User
 
+
+from django.shortcuts import render
+from .models import Patient
+def rechercher_patient_par_NSS(request):
+    patient = None
+    no_patient = False
+    if request.method == 'POST':
+        nss = request.POST.get('nss')
+        try:
+            patient = Patient.objects.get(nss=nss)
+        except Patient.DoesNotExist:
+            no_patient = True
+    return render(request, 'rechercher_patient.html', {'patient': patient, 'no_patient': no_patient})
+ 
+
 def login_view(request):
     if request.method == 'POST':
       
@@ -40,7 +55,7 @@ def login_view(request):
                 # Manually set the user in the session
                 request.session['user_id'] = user.id
                 messages.success(request, 'Login successful!')
-                return redirect('home')  # Redirect to the home page
+                return redirect('rechercher_patient')  # Redirect to rechercher_dpi
             else:
                 print("Password does not match.")  # Debug print
                 messages.error(request, 'Incorrect password')
@@ -50,6 +65,10 @@ def login_view(request):
 
     # Render the login page if the request is not POST or if authentication fails
     return render(request, 'login.html')
+
+
+
+
 def home(request):
     return render(request, 'home.html')
 

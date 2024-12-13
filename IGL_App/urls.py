@@ -7,5 +7,6 @@ urlpatterns = [
     path('register/', views.register_staff, name='register_staff'),
     path('register_patient/', views.register_patient, name='register_patient'),
     path('create_consultation/', views.create_consultation, name='create_consultation'),
-     path('ajouter_soin/', views.ajouter_soin, name='ajouter_soin'),
+    path('ajouter_soin/', views.ajouter_soin, name='ajouter_soin'),
+    path('rechercher_patient/', views.rechercher_patient_par_NSS, name='rechercher_patient'),
 ]
