@@ -211,7 +211,7 @@ def create_consultation(request):
 
     # For GET requests, render the form
     dossier_patients = DossierPatient.objects.all()  # Fetch all dossier patients for selection
-    return render(request, 'create_consultation.html', {'dossier_patients': dossier_patients})
+    return render(request, 'consultation.html', {'dossier_patients': dossier_patients})
 
 
 def ajouter_soin(request):
