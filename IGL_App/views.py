@@ -14,6 +14,9 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Soins
 from django.contrib.auth.models import User
+from django.utils.timezone import make_aware
+from datetime import datetime
+from django.utils.timezone import now
 
 
 from django.shortcuts import render
@@ -197,13 +200,21 @@ def register_patient(request):
 
 
 
-
 def create_consultation(request):
     if request.method == 'POST':
+        print ("request consult")
         try:
             # Get data from the POST request
             dossier_patient_id = request.POST.get('dossier_patient_id')
-            date_consultation = request.POST.get('date_consultation', now())  # Use the provided date or default to now
+            numero_consultation = int(request.POST.get('numero_consultation'))
+            date_consultation_str = request.POST.get('date_consultation', None)
+
+            # Convert date_consultation to datetime and make it timezone-aware
+            if date_consultation_str:
+                date_consultation = make_aware(datetime.strptime(date_consultation_str, "%Y-%m-%dT%H:%M"))
+            else:
+                date_consultation = now()  # Default to now if date is not provided
+
             bilan_prescrit = request.POST.get('bilan_prescrit', '').strip()
             resume = request.POST.get('resume', '').strip()
 
@@ -217,6 +228,7 @@ def create_consultation(request):
             # Create the Consultation object
             consultation = Consultation.objects.create(
                 dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation,
                 date_consultation=date_consultation,
                 bilan_prescrit=bilan_prescrit,
                 resume=resume,
@@ -231,7 +243,6 @@ def create_consultation(request):
     # For GET requests, render the form
     dossier_patients = DossierPatient.objects.all()  # Fetch all dossier patients for selection
     return render(request, 'consultation.html', {'dossier_patients': dossier_patients})
-
 
 def ajouter_soin(request):
     # Récupérer les dossiers des patients et les infirmiers

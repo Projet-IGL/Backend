@@ -50,6 +50,7 @@ class DossierPatient(models.Model):
 
 class Consultation(models.Model):
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
+    numero_consultation = models.IntegerField(default=0, unique=True) 
     date_consultation = models.DateTimeField()
     bilan_prescrit = models.TextField(blank=True, null=True)
     resume = models.TextField(blank=True, null=True)
