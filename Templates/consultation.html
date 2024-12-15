@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Consultation</title>
+    <title>Créer Consultation</title>
 </head>
 <body>
     <h1>Create Consultation</h1>
@@ -12,18 +12,27 @@
         
         <label for="dossier_patient_id">Dossier Patient:</label><br>
         <select id="dossier_patient_id" name="dossier_patient_id" required>
-            <option value="" disabled selected>Select a dossier</option>
+            <option value="" disabled selected>Selectionner un dossier</option>
             {% for dossier in dossier_patients %}
                 <option value="{{ dossier.id }}">{{ dossier.patient.nom }} {{ dossier.patient.prenom }}</option>
             {% endfor %}
         </select><br><br>
 
-        <label for="date_consultation">Consultation Date:</label><br>
+        <label for="numero_consultation">numero de la conultation:</label>
+        <input type="number" name="numero_consultation" required><br>
+
+        <label for="date_consultation">Date consultation:</label><br>
         <input type="datetime-local" id="date_consultation" name="date_consultation" required><br><br>
 
-        <label for="bilan_prescrit">Prescribed Bilan:</label><br>
-        <textarea id="bilan_prescrit" name="bilan_prescrit" rows="4" cols="50"></textarea><br><br>
-
+        <label for="bilan_prescrit">Bilan préscrit:</label><br>
+       <select id="bilan_prescrit" name="bilan_prescrit" required>
+       <option value="" disabled selected>Selectionner un bilan</option>
+       <option value="bilan biologique">Bilan Biologique</option>
+       <option value="bilan radiologique">Bilan Radiologique</option>
+       <option value="bilan biologique et radiologique">Bilan Biologique et Radiologique</option>
+       <option value="Aucun bilan">Aucun Bilan</option>
+       </select><br><br>
+       
         <label for="resume">Résumé:</label><br>
         <textarea id="resume" name="resume" rows="4" cols="50"></textarea><br><br>
 

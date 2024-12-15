@@ -14,6 +14,24 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Soins
 from django.contrib.auth.models import User
+from django.utils.timezone import make_aware
+from datetime import datetime
+from django.utils.timezone import now
+
+
+from django.shortcuts import render
+from .models import Patient
+def rechercher_patient_par_NSS(request):
+    patient = None
+    no_patient = False
+    if request.method == 'POST':
+        nss = request.POST.get('nss')
+        try:
+            patient = Patient.objects.get(nss=nss)
+        except Patient.DoesNotExist:
+            no_patient = True
+    return render(request, 'rechercher_patient.html', {'patient': patient, 'no_patient': no_patient})
+ 
 
 def login_view(request):
     if request.method == 'POST':
@@ -40,7 +58,7 @@ def login_view(request):
                 # Manually set the user in the session
                 request.session['user_id'] = user.id
                 messages.success(request, 'Login successful!')
-                return redirect('home')  # Redirect to the home page
+                return redirect('rechercher_patient')  # Redirect to rechercher_dpi
             else:
                 print("Password does not match.")  # Debug print
                 messages.error(request, 'Incorrect password')
@@ -50,6 +68,10 @@ def login_view(request):
 
     # Render the login page if the request is not POST or if authentication fails
     return render(request, 'login.html')
+
+
+
+
 def home(request):
     return render(request, 'home.html')
 
@@ -176,16 +198,25 @@ def register_patient(request):
     print(f"Number of médecins found: {medecins.count()}")
     return render(request, 'register_patient.html', {'medecins': medecins})
 
-
-
-
 def create_consultation(request):
     if request.method == 'POST':
         try:
             # Get data from the POST request
             dossier_patient_id = request.POST.get('dossier_patient_id')
-            date_consultation = request.POST.get('date_consultation', now())  # Use the provided date or default to now
-            bilan_prescrit = request.POST.get('bilan_prescrit', '').strip()
+            numero_consultation = int(request.POST.get('numero_consultation'))
+            date_consultation_str = request.POST.get('date_consultation', None)
+
+            # Convert date_consultation to datetime and make it timezone-aware
+            if date_consultation_str:
+                date_consultation = make_aware(datetime.strptime(date_consultation_str, "%Y-%m-%dT%H:%M"))
+            else:
+                date_consultation = now()
+
+            bilan_prescrit = request.POST.get('bilan_prescrit')
+            if bilan_prescrit not in [choice[0] for choice in Consultation.BILAN_CHOICES]:
+                messages.error(request, "Invalid value for bilan prescrit.")
+                return redirect('create_consultation')
+
             resume = request.POST.get('resume', '').strip()
 
             # Find the corresponding dossier patient
@@ -198,21 +229,21 @@ def create_consultation(request):
             # Create the Consultation object
             consultation = Consultation.objects.create(
                 dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation,
                 date_consultation=date_consultation,
                 bilan_prescrit=bilan_prescrit,
                 resume=resume,
             )
             messages.success(request, "Consultation created successfully.")
-            return redirect('home')  # Redirect to a relevant page (e.g., the home page or consultation list)
+            return redirect('home')
 
         except Exception as e:
             messages.error(request, f"An error occurred: {e}")
             return redirect('create_consultation')
 
     # For GET requests, render the form
-    dossier_patients = DossierPatient.objects.all()  # Fetch all dossier patients for selection
+    dossier_patients = DossierPatient.objects.all()
     return render(request, 'consultation.html', {'dossier_patients': dossier_patients})
-
 
 def ajouter_soin(request):
     # Récupérer les dossiers des patients et les infirmiers

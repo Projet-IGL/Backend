@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rechercher Patient</title>
+</head>
+<body>
+    <h1>Rechercher le DPI d'un patient par NSS</h1>
+    <form method="POST" action="{% url 'rechercher_patient' %}">
+        {% csrf_token %}
+        <label for="nss">Entrez le NSS du patient :</label>
+        <input type="text" id="nss" name="nss" required>
+        <button type="submit">Rechercher</button>
+    </form>
+    {% if patient %}
+        <h2>Informations du Patient :</h2>
+        <p>Nom : {{ patient.nom }}</p>
+        <p>Prénom : {{ patient.prenom }}</p>
+        <p>Date de naissance : {{ patient.date_naissance }}</p>
+        <p>Adresse : {{ patient.adresse }}</p>
+        <p>Téléphone : {{ patient.telephone }}</p>
+        <p>Mutuelle : {{ patient.mutuelle }}</p>
+    {% elif no_patient %}
+        <p>Aucun patient trouvé avec le NSS spécifié.</p>
+    {% endif %}
+</body>
+</html>

@@ -49,16 +49,24 @@ class DossierPatient(models.Model):
         
 
 class Consultation(models.Model):
+    BILAN_CHOICES = [
+        ('bilan biologique', 'Bilan Biologique'),
+        ('bilan radiologique', 'Bilan Radiologique'),
+        ('bilan biologique et radiologique', 'Bilan Biologique et Radiologique'),
+        ('Aucun bilan', 'Aucun Bilan'),
+    ]
+
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
+    numero_consultation = models.IntegerField(default=0, unique=True)
     date_consultation = models.DateTimeField()
-    bilan_prescrit = models.TextField(blank=True, null=True)
+    bilan_prescrit = models.CharField(max_length=50, choices=BILAN_CHOICES, default='Aucun bilan')
     resume = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f"Consultation for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
+
     class Meta:
         db_table = 'Consultation'
-    
 
 class Soins(models.Model):
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
@@ -82,6 +90,8 @@ class Ordonnance(models.Model):
 
     def __str__(self):
         return f"Ordonnance for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
+    class Meta:
+        db_table = 'Ordonnance'
 
 class BilanBiologique(models.Model):
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
