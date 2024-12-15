@@ -25,8 +25,14 @@
         <input type="datetime-local" id="date_consultation" name="date_consultation" required><br><br>
 
         <label for="bilan_prescrit">Bilan préscrit:</label><br>
-        <textarea id="bilan_prescrit" name="bilan_prescrit" rows="4" cols="50"></textarea><br><br>
-
+       <select id="bilan_prescrit" name="bilan_prescrit" required>
+       <option value="" disabled selected>Selectionner un bilan</option>
+       <option value="bilan biologique">Bilan Biologique</option>
+       <option value="bilan radiologique">Bilan Radiologique</option>
+       <option value="bilan biologique et radiologique">Bilan Biologique et Radiologique</option>
+       <option value="Aucun bilan">Aucun Bilan</option>
+       </select><br><br>
+       
         <label for="resume">Résumé:</label><br>
         <textarea id="resume" name="resume" rows="4" cols="50"></textarea><br><br>
 

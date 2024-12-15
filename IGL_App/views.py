@@ -198,11 +198,8 @@ def register_patient(request):
     print(f"Number of médecins found: {medecins.count()}")
     return render(request, 'register_patient.html', {'medecins': medecins})
 
-
-
 def create_consultation(request):
     if request.method == 'POST':
-        print ("request consult")
         try:
             # Get data from the POST request
             dossier_patient_id = request.POST.get('dossier_patient_id')
@@ -213,9 +210,13 @@ def create_consultation(request):
             if date_consultation_str:
                 date_consultation = make_aware(datetime.strptime(date_consultation_str, "%Y-%m-%dT%H:%M"))
             else:
-                date_consultation = now()  # Default to now if date is not provided
+                date_consultation = now()
 
-            bilan_prescrit = request.POST.get('bilan_prescrit', '').strip()
+            bilan_prescrit = request.POST.get('bilan_prescrit')
+            if bilan_prescrit not in [choice[0] for choice in Consultation.BILAN_CHOICES]:
+                messages.error(request, "Invalid value for bilan prescrit.")
+                return redirect('create_consultation')
+
             resume = request.POST.get('resume', '').strip()
 
             # Find the corresponding dossier patient
@@ -234,14 +235,14 @@ def create_consultation(request):
                 resume=resume,
             )
             messages.success(request, "Consultation created successfully.")
-            return redirect('home')  # Redirect to a relevant page (e.g., the home page or consultation list)
+            return redirect('home')
 
         except Exception as e:
             messages.error(request, f"An error occurred: {e}")
             return redirect('create_consultation')
 
     # For GET requests, render the form
-    dossier_patients = DossierPatient.objects.all()  # Fetch all dossier patients for selection
+    dossier_patients = DossierPatient.objects.all()
     return render(request, 'consultation.html', {'dossier_patients': dossier_patients})
 
 def ajouter_soin(request):
