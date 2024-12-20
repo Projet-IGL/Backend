@@ -18,8 +18,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from backendapp.views import login_view
+from backendapp.views import rechercher_dpi_par_nss
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/login/', login_view, name='login'),  # Add the login view here
+    path('api/login/', login_view, name='login'),
+    path('api/rechercher_dpi_par_nss/', rechercher_dpi_par_nss, name='rechercher_dpi_par_nss'),
+
 ]

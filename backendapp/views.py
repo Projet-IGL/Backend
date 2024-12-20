@@ -8,9 +8,10 @@ from .serializers import (
     PatientSerializer, 
     LaborantinSerializer, 
     InfirmierSerializer, 
-    RadiologueSerializer
+    RadiologueSerializer,
+    DossierPatientSerializer
 )
-from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue
+from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient
 
 @api_view(['POST'])
 def login_view(request):
@@ -74,3 +75,27 @@ def login_view(request):
 
     else:
         return Response({'message': 'Invalid username or password'}, status=status.HTTP_401_UNAUTHORIZED)
+    
+@api_view(['POST'])
+def rechercher_dpi_par_nss(request):
+    nss = request.data.get('nss')  # Get nss from query parameters
+
+    if not nss:
+        return Response({'message': 'NSS parameter is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        patient = Patient.objects.get(nss=nss)  # Find the patient by NSS
+        dossier_patient = patient.dossier_patient  # Direct reference to DossierPatient
+    except Patient.DoesNotExist:
+        return Response({'message': 'Patient not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Serialize the Patient and DossierPatient instances
+    patient_serializer = PatientSerializer(patient) # this will also fetch the dpi data
+
+    # Prepare the response data with both patient and dossier information
+    response_data = {
+        'patient_data': patient_serializer.data,
+    }
+
+    # Return the combined data in the response
+    return Response(response_data, status=status.HTTP_200_OK)
