@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import date
 from django.contrib.auth.models import AbstractUser
+from multiselectfield import MultiSelectField
 
 class User(AbstractUser):
     ROLE_CHOICES = (
@@ -88,15 +89,18 @@ class DossierPatient(models.Model):
 
 class Consultation(models.Model):
     BILAN_CHOICES = [
-        ('bilan biologique', 'Bilan Biologique'),
-        ('bilan radiologique', 'Bilan Radiologique'),
-        ('bilan biologique et radiologique', 'Bilan Biologique et Radiologique'),
+        ('bilan bio-Glycémie', 'bilan bio-Glycémie'),
+        ('bilan bio-Pression artérielle', 'bilan bio-Pression artérielle'),
+        ('bilan bio-Niveau Cholésterole', 'bilan bio-Niveau Cholésterole'),
+        ('bilan Rad-IRM', 'bilan Rad-IRM'),
+        ('bilan Rad-Echographie', 'bilan Rad-Echographie'),
+        ('bilan Rad-Radiographie', 'bilan Rad-Radiographie'),
         ('Aucun bilan', 'Aucun Bilan'),
     ]
-
+    #author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL)  # Référence à Author ou NULL
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
     date_consultation = models.DateTimeField()
-    bilan_prescrit = models.CharField(max_length=50, choices=BILAN_CHOICES, default='Aucun bilan')
+    bilan_prescrit = MultiSelectField(choices=BILAN_CHOICES, blank=True)
     resume = models.TextField(blank=True, null=True)
 
     def __str__(self):
