@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Administrateur, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient
+from .models import User, Administrateur, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient, Consultation
 
 class UserSerializer(serializers.ModelSerializer):
     """
@@ -85,6 +85,16 @@ class RadiologueSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Radiologue
+        fields = '__all__'
+
+
+
+class ConsultationSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Consultation role.
+    """
+    class Meta:
+        model = Consultation
         fields = '__all__'
 
 

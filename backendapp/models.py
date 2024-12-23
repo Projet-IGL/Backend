@@ -84,3 +84,24 @@ class DossierPatient(models.Model):
     
     class Meta:
         db_table = 'dossiers_patients'  # Custom table name for the model
+
+
+class Consultation(models.Model):
+    BILAN_CHOICES = [
+        ('bilan biologique', 'Bilan Biologique'),
+        ('bilan radiologique', 'Bilan Radiologique'),
+        ('bilan biologique et radiologique', 'Bilan Biologique et Radiologique'),
+        ('Aucun bilan', 'Aucun Bilan'),
+    ]
+
+    dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
+    date_consultation = models.DateTimeField()
+    bilan_prescrit = models.CharField(max_length=50, choices=BILAN_CHOICES, default='Aucun bilan')
+    resume = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Consultation for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
+
+    class Meta:
+        db_table = 'consultation'
+        

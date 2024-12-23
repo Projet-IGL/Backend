@@ -11,7 +11,7 @@ from .serializers import (
     RadiologueSerializer,
     DossierPatientSerializer
 )
-from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient
+from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient , Consultation
 
 @api_view(['POST'])
 def login_view(request):
@@ -99,3 +99,105 @@ def rechercher_dpi_par_nss(request):
 
     # Return the combined data in the response
     return Response(response_data, status=status.HTTP_200_OK)
+
+"""
+
+class Consultation(models.Model):
+    BILAN_CHOICES = [
+        ('bilan biologique', 'Bilan Biologique'),
+        ('bilan radiologique', 'Bilan Radiologique'),
+        ('bilan biologique et radiologique', 'Bilan Biologique et Radiologique'),
+        ('Aucun bilan', 'Aucun Bilan'),
+    ]
+
+    dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
+    date_consultation = models.DateTimeField()
+    bilan_prescrit = models.CharField(max_length=50, choices=BILAN_CHOICES, default='Aucun bilan')
+    resume = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Consultation for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
+
+    class Meta:
+        db_table = 'consultation'
+        
+"""  
+
+        
+"""  
+
+@api_view(['POST'])
+def create_consultation(request):
+        try:
+            # Get data from the POST request
+            dossier_patient_id = request.POST.get('dossier_patient_id')
+            date_consultation_str = request.POST.get('date_consultation', None)
+
+            # Convert date_consultation to datetime and make it timezone-aware
+            if date_consultation_str:
+                date_consultation = make_aware(datetime.strptime(date_consultation_str, "%Y-%m-%dT%H:%M"))
+            else:
+                date_consultation = now()
+
+            bilan_prescrit = request.POST.get('bilan_prescrit')
+            if bilan_prescrit not in [choice[0] for choice in Consultation.BILAN_CHOICES]:
+                messages.error(request, "Invalid value for bilan prescrit.")
+                return redirect('create_consultation')
+
+            resume = request.POST.get('resume', '').strip()
+
+            # Find the corresponding dossier patient
+            try:
+                dossier_patient = DossierPatient.objects.get(id=dossier_patient_id)
+            except DossierPatient.DoesNotExist:
+                messages.error(request, "Dossier patient not found.")
+                return redirect('create_consultation')
+
+            # Create the Consultation object
+            consultation = Consultation.objects.create(
+                dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation,
+                date_consultation=date_consultation,
+                bilan_prescrit=bilan_prescrit,
+                resume=resume,
+            )
+            messages.success(request, "Consultation created successfully.")
+            return redirect('home')
+
+        except Exception as e:
+            messages.error(request, f"An error occurred: {e}")
+            return redirect('create_consultation')
+
+    # For GET requests, render the form
+    dossier_patients = DossierPatient.objects.all()
+    return render(request, 'consultation.html', {'dossier_patients': dossier_patients})
+
+
+        
+"""  
+
+@api_view(['POST'])
+def creer_consultation(request):
+    dossier_patient = request.data.get('dossier_patient')  # Get nss from query parameters
+    date_consultation = request.data.get('date_consultation')
+    bilan_prescrit = request.data.get('bilan_prescrit')
+    resume = request.data.get('resume')
+
+    # Find the corresponding dossier patient
+    try:
+        dossier_patient = DossierPatient.objects.get(id=dossier_patient)
+    except DossierPatient.DoesNotExist:
+        return Response({'message': 'Dossier Patient not found'}, status=status.HTTP_404_NOT_FOUND)
+
+
+    # Create the Consultation object
+    consultation = Consultation.objects.create(
+        dossier_patient=dossier_patient,
+        date_consultation=date_consultation,
+        bilan_prescrit=bilan_prescrit,
+        resume=resume,
+        )
+    
+    return Response({'message': 'Consultation created successefully'}, status=status.HTTP_200_OK)
+
+
