@@ -11,7 +11,7 @@ from .serializers import (
     RadiologueSerializer,
     DossierPatientSerializer
 )
-from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient , Consultation
+from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient , Consultation , Soins
 
 @api_view(['POST'])
 def login_view(request):
@@ -201,3 +201,76 @@ def creer_consultation(request):
     return Response({'message': 'Consultation created successefully'}, status=status.HTTP_200_OK)
 
 
+@api_view(['POST'])
+def Faire_soin(request):
+    dossier_patient_id = request.data.get('dossier_patient')  # Get dossier_patient ID from request data
+    infirmier_id = request.data.get('infirmier')  # Get infirmier ID from request data we should have it from the front as the connected
+    observation_etat_patient = request.data.get('observation_etat_patient')
+    medicament_pris = request.data.get('medicament_pris')
+    description_soins = request.data.get('description_soins')
+    date_soin = request.data.get('date_soin')
+
+    # Validate the DossierPatient
+    try:
+        dossier_patient = DossierPatient.objects.get(id=dossier_patient_id)
+    except DossierPatient.DoesNotExist:
+        return Response({'message': 'Dossier Patient not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Validate the Infirmier (optional, since it can be null)
+    infirmier = None
+    if infirmier_id:
+        try:
+            infirmier = Infirmier.objects.get(id=infirmier_id)
+        except Infirmier.DoesNotExist:
+            return Response({'message': 'Infirmier not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Create the Soins object
+    soins = Soins.objects.create(
+        dossier_patient=dossier_patient,
+        infirmier=infirmier,
+        observation_etat_patient=observation_etat_patient,
+        medicament_pris=medicament_pris,
+        description_soins=description_soins,
+        date_soin=date_soin
+    )
+    
+    return Response({'message': 'Soins created successfully'}, status=status.HTTP_201_CREATED)
+
+
+"""
+def ajouter_soin(request):
+    # Récupérer les dossiers des patients et les infirmiers
+    dossier_patients = DossierPatient.objects.all()
+    infirmiers = Staff.objects.filter(role='infirmier')  # Assurez-vous d'avoir un champ "role" pour filtrer les infirmiers
+
+    if request.method == 'POST':
+        # Récupérer les données du formulaire
+        dossier_patient_id = request.POST.get('dossier_patient')
+        infirmier_id = request.POST.get('infirmier')
+        observation_etat_patient = request.POST.get('observation_etat_patient')
+        medicament_pris = request.POST.get('medicament_pris') == 'on'  # Le checkbox envoie "on" si coché
+        description_soins = request.POST.get('description_soins')
+        date_soin = request.POST.get('date_soin')
+
+        try:
+            # Enregistrer les données dans la table Soins
+            soin = Soins.objects.create(
+                dossier_patient_id=dossier_patient_id,
+                infirmier_id=infirmier_id,
+                observation_etat_patient=observation_etat_patient,
+                medicament_pris=medicament_pris,
+                description_soins=description_soins,
+                date_soin=date_soin
+            )
+
+            messages.success(request, 'Soin ajouté avec succès!')
+            return redirect('home')  # Remplacez par l'URL de votre choix
+
+        except Exception as e:
+            messages.error(request, f"Erreur lors de l'ajout du soin: {e}")
+
+    return render(request, 'ajouter_soin.html', {
+        'dossier_patients': dossier_patients,
+        'infirmiers': infirmiers
+    })
+"""

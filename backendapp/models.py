@@ -109,3 +109,22 @@ class Consultation(models.Model):
     class Meta:
         db_table = 'consultation'
         
+class Soins(models.Model):
+    dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
+    infirmier = models.ForeignKey(
+        Infirmier,
+        on_delete=models.SET_NULL,  # If the referenced doctor is deleted, the field is set to NULL.
+        null=True,  # Makes this field optional by allowing it to be null
+        blank=True,  # Makes this field optional by allowing it to be blank
+        related_name="patients"  # Allows reverse access from a Medecin instance to their patients
+    )
+    
+    observation_etat_patient = models.TextField()
+    medicament_pris = models.BooleanField(default=False)
+    description_soins = models.TextField()
+    date_soin = models.DateTimeField()
+
+    def __str__(self):
+        return f"Soins for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
+    class Meta:
+        db_table = 'soins'        

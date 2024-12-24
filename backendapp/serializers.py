@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Administrateur, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient, Consultation
+from .models import User, Administrateur, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient, Consultation , Soins
 
 class UserSerializer(serializers.ModelSerializer):
     """
@@ -95,6 +95,15 @@ class ConsultationSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Consultation
+        fields = '__all__'
+
+
+class SoinsSerializer(serializers.ModelSerializer):
+    """
+    Serializer for les soins.
+    """
+    class Meta:
+        model = Soins
         fields = '__all__'
 
 

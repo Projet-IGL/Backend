@@ -20,11 +20,13 @@ from django.urls import path, include
 from backendapp.views import login_view
 from backendapp.views import rechercher_dpi_par_nss
 from backendapp.views import creer_consultation
+from backendapp.views import Faire_soin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/login/', login_view, name='login'),
     path('api/rechercher_dpi_par_nss/', rechercher_dpi_par_nss, name='rechercher_dpi_par_nss'),
     path('api/creer_consultation/', creer_consultation , name='creer_consultation'),
+    path('api/faire_soin/', Faire_soin, name='faire_soin'),
 
 ]
