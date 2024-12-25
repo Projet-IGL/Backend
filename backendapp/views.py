@@ -11,7 +11,9 @@ from .serializers import (
     RadiologueSerializer,
     DossierPatientSerializer
 )
-from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient , Consultation , Soins
+from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient , Consultation , Soins , Ordonnance , Medicament ,BilanBiologique , BilanRadiologique
+from django.shortcuts import get_object_or_404 
+from django.db import transaction
 
 @api_view(['POST'])
 def login_view(request):
@@ -100,29 +102,6 @@ def rechercher_dpi_par_nss(request):
     # Return the combined data in the response
     return Response(response_data, status=status.HTTP_200_OK)
 
-"""
-
-class Consultation(models.Model):
-    BILAN_CHOICES = [
-        ('bilan biologique', 'Bilan Biologique'),
-        ('bilan radiologique', 'Bilan Radiologique'),
-        ('bilan biologique et radiologique', 'Bilan Biologique et Radiologique'),
-        ('Aucun bilan', 'Aucun Bilan'),
-    ]
-
-    dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
-    date_consultation = models.DateTimeField()
-    bilan_prescrit = models.CharField(max_length=50, choices=BILAN_CHOICES, default='Aucun bilan')
-    resume = models.TextField(blank=True, null=True)
-
-    def __str__(self):
-        return f"Consultation for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
-
-    class Meta:
-        db_table = 'consultation'
-        
-"""  
-
         
 """  
 
@@ -179,6 +158,7 @@ def create_consultation(request):
 @api_view(['POST'])
 def creer_consultation(request):
     dossier_patient = request.data.get('dossier_patient')  # Get nss from query parameters
+    print(f"Dossier Patient ID: {dossier_patient}")
     date_consultation = request.data.get('date_consultation')
     bilan_prescrit = request.data.get('bilan_prescrit')
     resume = request.data.get('resume')
@@ -186,14 +166,23 @@ def creer_consultation(request):
     # Find the corresponding dossier patient
     try:
         dossier_patient = DossierPatient.objects.get(id=dossier_patient)
+        print(f"Dossier Patient ID: {dossier_patient}")
     except DossierPatient.DoesNotExist:
         return Response({'message': 'Dossier Patient not found'}, status=status.HTTP_404_NOT_FOUND)
+    
+    last_consultation = Consultation.objects.filter(dossier_patient=dossier_patient).order_by('-numero_consultation').first()
+    if last_consultation:
+        numero_consultation = last_consultation.numero_consultation + 1
+    else:
+        numero_consultation = 1  # First consultation for this patient
+    print(f"New Numero Consultation: {numero_consultation}")
 
 
     # Create the Consultation object
     consultation = Consultation.objects.create(
         dossier_patient=dossier_patient,
         date_consultation=date_consultation,
+        numero_consultation=numero_consultation,
         bilan_prescrit=bilan_prescrit,
         resume=resume,
         )
@@ -237,40 +226,184 @@ def Faire_soin(request):
     return Response({'message': 'Soins created successfully'}, status=status.HTTP_201_CREATED)
 
 
-"""
-def ajouter_soin(request):
-    # Récupérer les dossiers des patients et les infirmiers
-    dossier_patients = DossierPatient.objects.all()
-    infirmiers = Staff.objects.filter(role='infirmier')  # Assurez-vous d'avoir un champ "role" pour filtrer les infirmiers
 
-    if request.method == 'POST':
-        # Récupérer les données du formulaire
-        dossier_patient_id = request.POST.get('dossier_patient')
-        infirmier_id = request.POST.get('infirmier')
-        observation_etat_patient = request.POST.get('observation_etat_patient')
-        medicament_pris = request.POST.get('medicament_pris') == 'on'  # Le checkbox envoie "on" si coché
-        description_soins = request.POST.get('description_soins')
-        date_soin = request.POST.get('date_soin')
+@api_view(['POST'])
+def creer_ordonnance(request):
+    try:
+        nss = request.data.get('nss', '').strip()
+        numero_consultation = request.data.get('numero_consultation', '').strip()
+        medicaments_data = request.data.get('medicaments', [])  # Expecting a list of medication dictionaries
 
-        try:
-            # Enregistrer les données dans la table Soins
-            soin = Soins.objects.create(
-                dossier_patient_id=dossier_patient_id,
-                infirmier_id=infirmier_id,
-                observation_etat_patient=observation_etat_patient,
-                medicament_pris=medicament_pris,
-                description_soins=description_soins,
-                date_soin=date_soin
+        if not nss or not numero_consultation or not medicaments_data:
+            return Response(
+                {'error': 'NSS, numero_consultation, and medicaments are required.'},
+                status=status.HTTP_400_BAD_REQUEST
             )
 
-            messages.success(request, 'Soin ajouté avec succès!')
-            return redirect('home')  # Remplacez par l'URL de votre choix
+        # Validate and retrieve patient, dossier, and consultation
+        patient = get_object_or_404(Patient, nss=nss)
+        dossier_patient = get_object_or_404(DossierPatient, patient=patient)
+        consultation = get_object_or_404(
+            Consultation,
+            dossier_patient=dossier_patient,
+            numero_consultation=numero_consultation
+        )
 
-        except Exception as e:
-            messages.error(request, f"Erreur lors de l'ajout du soin: {e}")
+        with transaction.atomic():
+            # Create the Ordonnance
+            ordonnance = Ordonnance.objects.create(
+                dossier_patient=dossier_patient,
+                consultation=consultation
+            )
 
-    return render(request, 'ajouter_soin.html', {
-        'dossier_patients': dossier_patients,
-        'infirmiers': infirmiers
-    })
-"""
+            # Create Medicaments for the Ordonnance
+            for medicament_data in medicaments_data:
+                nom = medicament_data.get('nom')
+                dose = medicament_data.get('dose')
+                duree = medicament_data.get('duree')
+
+                if not (nom and dose and duree):
+                    continue  # Skip incomplete entries
+
+                Medicament.objects.create(
+                    ordonnance=ordonnance,
+                    nom=nom,
+                    dose=dose,
+                    duree=duree
+                )
+
+        return Response(
+            {'message': 'Ordonnance created successfully.'},
+            status=status.HTTP_201_CREATED
+        )
+
+    except Exception as e:
+        print("Error:", e)
+        return Response(
+            {'error': 'An error occurred while creating the ordonnance.'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+from django.utils.timezone import make_aware
+from datetime import datetime
+
+
+@api_view(['POST'])
+def creer_bilan_biologique(request):
+    try:
+        # Extract data from the request
+        nss = request.data.get('nss')
+        laborantin_id = request.data.get('laborantin_id')
+        resultat_analyse = request.data.get('resultat_analyse')
+        resultat_examen_imagerie = request.data.get('resultat_examen_imagerie')
+        date_examen_str = request.data.get('date_examen')
+        glycemie = request.data.get('glycemie')
+        pression_arterielle = request.data.get('pression_arterielle')
+        cholesterol = request.data.get('cholesterol')
+
+        # Validate required fields
+        if not nss or not laborantin_id or not resultat_analyse:
+            return Response({'message': 'NSS, Laborantin ID, and Resultat Analyse are required.'}, 
+                            status=status.HTTP_400_BAD_REQUEST)
+
+        # Convert date_examen to datetime and make it timezone-aware
+        if date_examen_str:
+            date_examen = make_aware(datetime.strptime(date_examen_str, "%Y-%m-%dT%H:%M"))
+        else:
+            date_examen = make_aware(datetime.now())
+
+        # Validate and get laborantin
+        try:
+            laborantin = Laborantin.objects.get(id=laborantin_id, role='laborantin')
+        except Laborantin.DoesNotExist:
+            return Response({'message': 'Laborantin not found or invalid ID.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Validate patient and dossier_patient
+        try:
+            patient = Patient.objects.get(nss=nss)
+            dossier_patient = DossierPatient.objects.get(patient=patient)
+        except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
+            return Response({'message': 'Patient or Dossier Patient not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Convert glycemie and cholesterol to float if provided
+        glycemie = float(glycemie) if glycemie else None
+        cholesterol = float(cholesterol) if cholesterol else None
+
+        # Create BilanBiologique instance
+        bilan_biologique = BilanBiologique.objects.create(
+            dossier_patient=dossier_patient,
+            laborantin=laborantin,
+            resultat_analyse=resultat_analyse,
+            resultat_examen_imagerie=resultat_examen_imagerie,
+            date_examen=date_examen,
+            graphe=None,  # Add logic for handling the graph if needed
+            glycemie=glycemie,
+            pression_arterielle=pression_arterielle,
+            cholesterol=cholesterol
+        )
+
+        return Response({'message': 'Bilan Biologique created successfully.'}, status=status.HTTP_201_CREATED)
+
+    except Exception as e:
+        return Response({'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+
+from .serializers import BilanRadiologiqueSerializer
+
+@api_view(['POST'])
+def creer_bilan_radiologique(request):
+    try:
+        # Extract data from the request
+        nss = request.data.get('nss')
+        radiologue_id = request.data.get('radiologue_id')
+        compte_rendu = request.data.get('compte_rendu')
+        date_examen_str = request.data.get('date_examen')
+        image_file = request.FILES.get('image')
+
+        # Validate required fields
+        if not nss or not radiologue_id or not compte_rendu:
+            return Response({'message': 'NSS, Radiologue ID, and Compte Rendu are required.'}, 
+                            status=status.HTTP_400_BAD_REQUEST)
+
+        # Convert date_examen to datetime and make it timezone-aware
+        if date_examen_str:
+            date_examen = make_aware(datetime.strptime(date_examen_str, "%Y-%m-%dT%H:%M:%S"))
+        else:
+            date_examen = make_aware(datetime.now())
+
+        # Validate and get the radiologue
+        try:
+            radiologue = Radiologue.objects.get(id=radiologue_id)
+        except Radiologue.DoesNotExist:
+            return Response({'message': 'Radiologue not found or invalid ID.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Validate and get the patient and dossier_patient
+        try:
+            patient = Patient.objects.get(nss=nss)
+            dossier_patient = DossierPatient.objects.get(patient=patient)
+        except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
+            return Response({'message': 'Patient or Dossier Patient not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Handle image conversion if provided
+        if image_file:
+            image_data = image_file  # No need to manually read the file; Django handles it
+        else:
+            image_data = None
+            
+        # Create BilanRadiologique instance
+        bilan_radiologique = BilanRadiologique.objects.create(
+            dossier_patient=dossier_patient,
+            radiologue=radiologue,
+            compte_rendu=compte_rendu,
+            images=image_data,
+            date_examen=date_examen
+        )
+
+        # Serialize and return the response data
+        serializer = BilanRadiologiqueSerializer(bilan_radiologique)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    except Exception as e:
+        return Response({'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

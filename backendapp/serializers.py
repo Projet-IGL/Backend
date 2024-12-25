@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Administrateur, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient, Consultation , Soins
+from .models import User, Administrateur, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient, Consultation , Soins , Medicament, Ordonnance , BilanRadiologique, BilanBiologique
 
 class UserSerializer(serializers.ModelSerializer):
     """
@@ -107,3 +107,30 @@ class SoinsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class MedicamentsSerializer(serializers.ModelSerializer):
+    """
+    Serializer for les soins.
+    """
+    class Meta:
+        model = Medicament
+        fields = '__all__'
+
+
+class OrdonnaceSerializer(serializers.ModelSerializer):
+    """
+    Serializer for les soins.
+    """
+    class Meta:
+        model = Ordonnance
+        fields = '__all__'
+
+
+class BilanBiologiqueSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BilanBiologique
+        fields = '__all__' 
+
+class BilanRadiologiqueSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BilanRadiologique
+        fields = '__all__' 
