@@ -58,8 +58,8 @@ class PatientAdmin(UserAdmin):
 
         # Check if the object is a Patient and does not already have a 'dossier_patient'
         dossier_patient = DossierPatient.objects.create(
-            etat="",  # Default state for the dossier
-            antécédents="",  # Empty by default
+            etat="actif",  # Default state for the dossier
+            antécédents="aucun",  # Empty by default
         )
 
         # Assign this newly created DossierPatient to the Patient object
@@ -165,6 +165,28 @@ class RadiologueAdmin(UserAdmin):
         obj.role = 'Radiologue'        
         super().save_model(request, obj, form, change)
 
+class AdministrateurAdmin(UserAdmin):
+    model = Administrateur
+    # specifies the model that represents the users
+    list_display = ('username', 'role', 'email', 'first_name', 'last_name', 'date_naissance', 'numero_telephone') 
+    # Adds the ability to filter the list of users by role in the admin interface.
+    search_fields = ('username', 'email',) 
+    # Allows the admin to search for users by username, email, and role
+    ordering = ('username',)
+    # Defines how the users will be ordered in the admin panel (username in this case).
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {'fields': ('date_naissance', 'adresse', 'numero_telephone')}),
+    )
+    # Specifies the fields shown when editing a User in the admin interface.
+    add_fieldsets = UserAdmin.add_fieldsets + (
+        (None, {'fields': ('email', 'first_name', 'last_name','date_naissance', 'adresse', 'numero_telephone')}),
+    # Defines which fields appear when creating a new User
+    )
+
+    def save_model(self, request, obj, form, change):
+        obj.role = 'Administrateur'        
+        super().save_model(request, obj, form, change)
+
 
 
 
@@ -181,3 +203,4 @@ admin.site.register(Medecin, MedecinAdmin)
 admin.site.register(Infirmier, InfirmierAdmin)
 admin.site.register(Laborantin, LaborantinAdmin)
 admin.site.register(Radiologue, RadiologueAdmin)
+admin.site.register(Administrateur, AdministrateurAdmin)

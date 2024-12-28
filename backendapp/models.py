@@ -51,7 +51,10 @@ class Patient(User):
         'DossierPatient',  # Reference to the DossierPatient model
         on_delete=models.CASCADE,  # If the patient is deleted, delete the dossier as well.
         related_name='patient',  # Allows reverse access from DossierPatient to Patient
+        null = True,
+        blank = True,
     )
+    telephone_urgence = models.CharField(max_length=15, unique=True,null = True , blank = True)
 
     class Meta:
         db_table = 'patients'  # Custom table name for the model

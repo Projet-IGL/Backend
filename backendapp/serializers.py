@@ -54,10 +54,13 @@ class PatientSerializer(serializers.ModelSerializer):
     Serializer for Patient role.
     Handles nested relationship with Medecin (medecin_traitant) and adds DossierPatient.
     """
-    medecin_traitant = serializers.PrimaryKeyRelatedField(
+    """ medecin_traitant = serializers.PrimaryKeyRelatedField(
         queryset=Medecin.objects.all(), required=False
-    )
-    dossier_patient = DossierPatientSerializer()  # Nested DossierPatient serializer
+    ) 
+    """
+
+    medecin_traitant = MedecinSerializer(allow_null=True, required=False) # Nested Medecin Traitant serializer
+    dossier_patient = DossierPatientSerializer(allow_null=True, required=False)  # Nested DossierPatient serializer
 
     class Meta:
         model = Patient

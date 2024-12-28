@@ -9,11 +9,25 @@ from .serializers import (
     LaborantinSerializer, 
     InfirmierSerializer, 
     RadiologueSerializer,
+    AdministrateurSerializer,
     DossierPatientSerializer
 )
-from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient , Consultation , Soins , Ordonnance , Medicament ,BilanBiologique , BilanRadiologique
+from .models import User, Medecin, Patient, Infirmier, Laborantin, Radiologue, DossierPatient , Consultation , Soins , Ordonnance , Medicament ,BilanBiologique , BilanRadiologique , Administrateur
 from django.shortcuts import get_object_or_404 
 from django.db import transaction
+
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from django.utils.dateparse import parse_date
+from .models import Patient, Medecin, DossierPatient, User
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Medecin, DossierPatient, User, Patient
+from .serializers import PatientSerializer
+from datetime import datetime
 
 @api_view(['POST'])
 def login_view(request):
@@ -71,6 +85,13 @@ def login_view(request):
                 response_data['data'] = RadiologueSerializer(radiologue).data
             except Radiologue.DoesNotExist:
                 return Response({'message': 'Radiologue data not found'}, status=status.HTTP_400_BAD_REQUEST)
+            
+        elif user.role == 'Administrateur':
+            try:
+                administrateur = Administrateur.objects.get(pk=user.pk)
+                response_data['data'] = AdministrateurSerializer(administrateur).data
+            except Administrateur.DoesNotExist:
+                return Response({'message': 'Administrateur data not found'}, status=status.HTTP_400_BAD_REQUEST)    
 
         # Return the final response
         return Response(response_data, status=status.HTTP_200_OK)
@@ -407,3 +428,65 @@ def creer_bilan_radiologique(request):
 
     except Exception as e:
         return Response({'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+
+
+@api_view(['POST'])
+def creer_patient(request):
+    # Extract the patient data from the request
+
+    print("2")
+
+    data = request.data
+    if not data:
+        return Response({'error': 'No patient data provided.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Ensure the provided Medecin exists
+    try:
+        medecin = Medecin.objects.get(username=data.get('medecin'))
+    except Medecin.DoesNotExist:
+        return Response({'error': 'Medecin not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Create the DossierPatient instance first
+    dossier_patient = DossierPatient.objects.create(
+        etat="actif",  # Default state for the dossier
+        antécédents="aucun",  # Empty by default
+    )
+
+    print('here !')
+    
+
+    # Prepare data for the patient (and the nested User fields)
+    patient_data = {
+        'username': data.get('username'),
+        'first_name': data.get('nom'),
+        'last_name': data.get('prenom'),
+        'email': data.get('email'),
+        'password': data.get('password'),
+        'role': 'Patient',  # Assigning the role as 'Patient'
+        'date_naissance': data.get('dateDeNaissance'),  # Assuming it's in a valid date format
+        'adresse': data.get('adresse'),
+        'numero_telephone': data.get('numtel'),
+        'nss': data.get('nss'),
+        'telephone_urgence': data.get('numtelurg'),
+        'mutuelle': data.get('mutuelle'),
+      
+    }
+
+    # Use the PatientSerializer to validate and save the patient
+    serializer = PatientSerializer(data=patient_data)
+
+    if serializer.is_valid():
+        # Save the patient instance
+        patient = serializer.save()
+        patient.medecin_traitant = medecin
+        patient.dossier_patient = dossier_patient
+
+        # Return the created patient data
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    # If the serializer is not valid, return the error response
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# THIS FUNCTION SHOULD BE REFACTORED ( IT DOES NOT EVEN HASH THE PASSWORD)
+    
