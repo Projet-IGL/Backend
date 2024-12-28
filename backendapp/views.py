@@ -537,7 +537,7 @@ def verifier_patient_par_nss(request):
         # Check if a patient with the given NSS exists
         patient = Patient.objects.get(nss=nss)
         return Response({
-            'message': 'Patient exists',
+            'message': 'True', #patient existe f bdd
             'data': {
                 'id': patient.id,
                 'nom': patient.first_name,  # Using first_name and last_name from AbstractUser
@@ -547,4 +547,4 @@ def verifier_patient_par_nss(request):
             }
         }, status=status.HTTP_200_OK)
     except Patient.DoesNotExist:
-        return Response({'message': 'Patient does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        return Response({'message': 'False'}, status=status.HTTP_404_NOT_FOUND) # nexiste pas f bdd 
