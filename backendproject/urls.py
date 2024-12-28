@@ -21,7 +21,7 @@ from backendapp.views import login_view
 from backendapp.views import rechercher_dpi_par_nss
 from backendapp.views import creer_consultation
 from backendapp.views import Faire_soin
-from backendapp.views import creer_patient , creer_ordonnance ,creer_bilan_biologique, creer_bilan_radiologique
+from backendapp.views import creer_patient , creer_ordonnance ,creer_bilan_biologique, creer_bilan_radiologique, verifier_patient_par_nss
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,4 +33,7 @@ urlpatterns = [
     path('api/creer_bilan_biologique/', creer_bilan_biologique, name='creer_bilan_biologique'),
     path('api/creer_bilan_radiologique/', creer_bilan_radiologique, name='creer_bilan_radiologique'),
     path('api/creer_patient/', creer_patient, name='creer_patient'),
+    path('api/checkNss/', verifier_patient_par_nss, name='checkNss'),
+    
+
 ]

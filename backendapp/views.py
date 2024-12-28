@@ -210,7 +210,7 @@ def creer_consultation(request):
     
     return Response({'message': 'Consultation created successefully'}, status=status.HTTP_200_OK)
 
-
+"""
 @api_view(['POST'])
 def Faire_soin(request):
     dossier_patient_id = request.data.get('dossier_patient')  # Get dossier_patient ID from request data
@@ -245,8 +245,44 @@ def Faire_soin(request):
     )
     
     return Response({'message': 'Soins created successfully'}, status=status.HTTP_201_CREATED)
+"""
+@api_view(['POST'])
+def Faire_soin(request):
+    nss = request.data.get('nss')  # Get NSS from the request data
+    infirmier_id = request.data.get('infirmier')  # Get infirmier ID (optional, linked to the connected user in frontend)
+    observation_etat_patient = request.data.get('observation_etat_patient')
+    medicament_pris = request.data.get('medicament_pris')
+    description_soins = request.data.get('description_soins')
+    date_soin = request.data.get('date_soin')
 
+    # Validate and retrieve the Patient and their DossierPatient
+    try:
+        patient = Patient.objects.get(nss=nss)
+        dossier_patient = patient.dossier_patient  # Access the linked DossierPatient
+    except Patient.DoesNotExist:
+        return Response({'message': 'Patient with the provided NSS not found'}, status=status.HTTP_404_NOT_FOUND)
+    except DossierPatient.DoesNotExist:
+        return Response({'message': 'Dossier Patient for the provided NSS not found'}, status=status.HTTP_404_NOT_FOUND)
 
+    # Validate the Infirmier (optional, since it can be null)
+    infirmier = None
+    if infirmier_id:
+        try:
+            infirmier = Infirmier.objects.get(id=infirmier_id)
+        except Infirmier.DoesNotExist:
+            return Response({'message': 'Infirmier not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Create the Soins object
+    soins = Soins.objects.create(
+        dossier_patient=dossier_patient,
+        infirmier=infirmier,
+        observation_etat_patient=observation_etat_patient,
+        medicament_pris=medicament_pris,
+        description_soins=description_soins,
+        date_soin=date_soin
+    )
+
+    return Response({'message': 'Soins created successfully'}, status=status.HTTP_201_CREATED)
 
 @api_view(['POST'])
 def creer_ordonnance(request):
@@ -489,4 +525,26 @@ def creer_patient(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 # THIS FUNCTION SHOULD BE REFACTORED ( IT DOES NOT EVEN HASH THE PASSWORD)
-    
+ 
+@api_view(['GET'])
+def verifier_patient_par_nss(request):
+    # Get NSS from query parameters
+    nss = request.query_params.get('nss', '').strip()  # Strip to remove leading/trailing whitespace or newline
+    if not nss:
+        return Response({'message': 'NSS is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        # Check if a patient with the given NSS exists
+        patient = Patient.objects.get(nss=nss)
+        return Response({
+            'message': 'Patient exists',
+            'data': {
+                'id': patient.id,
+                'nom': patient.first_name,  # Using first_name and last_name from AbstractUser
+                'prenom': patient.last_name,
+                'nss': patient.nss,
+                'medecin_traitant': patient.medecin_traitant.first_name if patient.medecin_traitant else None
+            }
+        }, status=status.HTTP_200_OK)
+    except Patient.DoesNotExist:
+        return Response({'message': 'Patient does not exist'}, status=status.HTTP_404_NOT_FOUND)
