@@ -137,3 +137,8 @@ class BilanRadiologiqueSerializer(serializers.ModelSerializer):
     class Meta:
         model = BilanRadiologique
         fields = '__all__' 
+
+class ConsultationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Consultation
+        fields = '__all__'

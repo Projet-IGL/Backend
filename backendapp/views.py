@@ -175,29 +175,32 @@ def create_consultation(request):
 
         
 """  
-
 @api_view(['POST'])
 def creer_consultation(request):
-    dossier_patient = request.data.get('dossier_patient')  # Get nss from query parameters
-    print(f"Dossier Patient ID: {dossier_patient}")
-    date_consultation = request.data.get('date_consultation')
-    bilan_prescrit = request.data.get('bilan_prescrit')
+    nss = request.data.get('dpi')
+    date_consultation = request.data.get('dateTime')
+    bilan_prescrit = request.data.get('bilan')
     resume = request.data.get('resume')
 
-    # Find the corresponding dossier patient
+    # Check if nss is provided
+    if not nss:
+        return Response({'message': 'NSS is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Find the corresponding Patient and DossierPatient
     try:
-        dossier_patient = DossierPatient.objects.get(id=dossier_patient)
-        print(f"Dossier Patient ID: {dossier_patient}")
-    except DossierPatient.DoesNotExist:
-        return Response({'message': 'Dossier Patient not found'}, status=status.HTTP_404_NOT_FOUND)
-    
+        patient = Patient.objects.get(nss=nss)
+        dossier_patient = patient.dossier_patient  # Get the associated DossierPatient
+        if not dossier_patient:
+            return Response({'message': 'No Dossier Patient found for this patient.'}, status=status.HTTP_404_NOT_FOUND)
+    except Patient.DoesNotExist:
+        return Response({'message': 'Patient with the given NSS not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+    # Find the last consultation and determine the next numero_consultation
     last_consultation = Consultation.objects.filter(dossier_patient=dossier_patient).order_by('-numero_consultation').first()
     if last_consultation:
         numero_consultation = last_consultation.numero_consultation + 1
     else:
         numero_consultation = 1  # First consultation for this patient
-    print(f"New Numero Consultation: {numero_consultation}")
-
 
     # Create the Consultation object
     consultation = Consultation.objects.create(
@@ -206,9 +209,10 @@ def creer_consultation(request):
         numero_consultation=numero_consultation,
         bilan_prescrit=bilan_prescrit,
         resume=resume,
-        )
-    
-    return Response({'message': 'Consultation created successefully'}, status=status.HTTP_200_OK)
+    )
+
+    # Return success response
+    return Response({'message': 'Consultation created successfully', 'consultation_id': consultation.id}, status=status.HTTP_201_CREATED)
 
 """
 @api_view(['POST'])
@@ -249,11 +253,11 @@ def Faire_soin(request):
 @api_view(['POST'])
 def Faire_soin(request):
     nss = request.data.get('nss')  # Get NSS from the request data
-    infirmier_id = request.data.get('infirmier')  # Get infirmier ID (optional, linked to the connected user in frontend)
-    observation_etat_patient = request.data.get('observation_etat_patient')
-    medicament_pris = request.data.get('medicament_pris')
-    description_soins = request.data.get('description_soins')
-    date_soin = request.data.get('date_soin')
+    infirmier_id = request.data.get('infirmierId')  # Get infirmier ID (optional, linked to the connected user in frontend)
+    observation_etat_patient = request.data.get('observations')
+    medicament_pris = request.data.get('medicamentAdministre')
+    description_soins = request.data.get('details')
+    date_soin = request.data.get('time')
 
     # Validate and retrieve the Patient and their DossierPatient
     try:
@@ -288,10 +292,10 @@ def Faire_soin(request):
 def creer_ordonnance(request):
     try:
         nss = request.data.get('nss', '').strip()
-        numero_consultation = request.data.get('numero_consultation', '').strip()
+        date_consultation = request.data.get('consultationDate', '').strip()
         medicaments_data = request.data.get('medicaments', [])  # Expecting a list of medication dictionaries
 
-        if not nss or not numero_consultation or not medicaments_data:
+        if not nss or not date_consultation or not medicaments_data:
             return Response(
                 {'error': 'NSS, numero_consultation, and medicaments are required.'},
                 status=status.HTTP_400_BAD_REQUEST
@@ -303,7 +307,7 @@ def creer_ordonnance(request):
         consultation = get_object_or_404(
             Consultation,
             dossier_patient=dossier_patient,
-            numero_consultation=numero_consultation
+            date_consultation=date_consultation
         )
 
         with transaction.atomic():
@@ -315,7 +319,7 @@ def creer_ordonnance(request):
 
             # Create Medicaments for the Ordonnance
             for medicament_data in medicaments_data:
-                nom = medicament_data.get('nom')
+                nom = medicament_data.get('medicament')
                 dose = medicament_data.get('dose')
                 duree = medicament_data.get('duree')
 
@@ -335,6 +339,7 @@ def creer_ordonnance(request):
         )
 
     except Exception as e:
+        print(f"Error: {str(e)}")  # Log the error message
         print("Error:", e)
         return Response(
             {'error': 'An error occurred while creating the ordonnance.'},
@@ -537,7 +542,7 @@ def verifier_patient_par_nss(request):
         # Check if a patient with the given NSS exists
         patient = Patient.objects.get(nss=nss)
         return Response({
-            'message': 'True', #patient existe f bdd
+            'exists': 'True', #patient existe f bdd
             'data': {
                 'id': patient.id,
                 'nom': patient.first_name,  # Using first_name and last_name from AbstractUser
@@ -547,4 +552,89 @@ def verifier_patient_par_nss(request):
             }
         }, status=status.HTTP_200_OK)
     except Patient.DoesNotExist:
-        return Response({'message': 'False'}, status=status.HTTP_404_NOT_FOUND) # nexiste pas f bdd 
+        return Response({'exists': 'False'}, status=status.HTTP_404_NOT_FOUND) # nexiste pas f bdd 
+    
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Patient, Consultation
+from .serializers import ConsultationSerializer
+
+@api_view(['POST'])
+def get_consultations_by_nss(request):
+    """
+    Retrieves consultations for a patient identified by their NSS.
+    """
+    nss = request.data.get('nss')  # Get the NSS from the request data
+
+    if not nss:
+        return Response({'message': 'NSS parameter is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        # Find the patient and their dossier
+        patient = Patient.objects.get(nss=nss)
+        dossier_patient = patient.dossier_patient
+
+        if not dossier_patient:
+            return Response({'message': 'DossierPatient not found for this patient.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Retrieve consultations associated with the patient's dossier
+        consultations = Consultation.objects.filter(dossier_patient=dossier_patient)
+
+        if not consultations.exists():
+            return Response({'message': 'No consultations found for this patient.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Serialize consultations
+        serializer = ConsultationSerializer(consultations, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    except Patient.DoesNotExist:
+        return Response({'message': 'Patient with the provided NSS not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+    except Exception as e:
+        return Response({'message': f'An unexpected error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['POST'])
+def get_soins_by_nss(request):
+    """
+    Retrieves soins (care records) for a patient identified by their NSS.
+    """
+    nss = request.data.get('nss')  # Get the NSS from the request data
+
+    if not nss:
+        return Response({'message': 'NSS parameter is required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        # Find the patient and their dossier
+        patient = Patient.objects.get(nss=nss)
+        dossier_patient = patient.dossier_patient
+
+        if not dossier_patient:
+            return Response({'message': 'DossierPatient not found for this patient.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Retrieve soins associated with the patient's dossier
+        soins_records = Soins.objects.filter(dossier_patient=dossier_patient)
+
+        if not soins_records.exists():
+            return Response({'message': 'No soins records found for this patient.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Serialize soins data
+        soins_data = []
+        for soin in soins_records:
+            soins_data.append({
+                'infirmier': soin.infirmier.last_name if soin.infirmier else None,
+                'observation_etat_patient': soin.observation_etat_patient,
+                'medicament_pris': soin.medicament_pris,
+                'description_soins': soin.description_soins,
+                'date_soin': soin.date_soin.isoformat()  # Serialize the date to ISO format
+            })
+
+        return Response(soins_data, status=status.HTTP_200_OK)
+
+    except Patient.DoesNotExist:
+        return Response({'message': 'Patient with the provided NSS not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+    except Exception as e:
+        return Response({'message': f'An unexpected error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
