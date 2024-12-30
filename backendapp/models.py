@@ -166,13 +166,12 @@ class BilanBiologique(models.Model):
         blank=True,  # Makes this field optional by allowing it to be blank
         related_name="patients"  # Allows reverse access from a Medecin instance to their patients
     )
-    resultat_analyse = models.TextField()
-    resultat_examen_imagerie = models.TextField()
     date_examen = models.DateTimeField()
-    graphe = models.BinaryField(null=True, blank=True)
+    graphe = models.ImageField(null=True, blank=True)
     glycemie = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     pression_arterielle = models.CharField(max_length=20, null=True, blank=True)
     cholesterol = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    numero_consultation = models.IntegerField(default=1)
 
 
     def __str__(self):
@@ -192,6 +191,7 @@ class BilanRadiologique(models.Model):
     compte_rendu = models.TextField()
     images = models.ImageField(null=True, blank=True)
     date_examen = models.DateTimeField()
+    numero_consultation = models.IntegerField(default=1)
 
     def __str__(self):
         return f"Bilan radiologique for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"

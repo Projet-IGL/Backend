@@ -293,11 +293,11 @@ def creer_ordonnance(request):
     try:
         nss = request.data.get('nss', '').strip()
         date_consultation = request.data.get('consultationDate', '').strip()
-        medicaments_data = request.data.get('medicaments', [])  # Expecting a list of medication dictionaries
+        medicaments_data = request.data.get('medications', [])  # Expecting a list of medication dictionaries
 
         if not nss or not date_consultation or not medicaments_data:
             return Response(
-                {'error': 'NSS, numero_consultation, and medicaments are required.'},
+                {'error': 'NSS, date_consultation, and medictions are required.'},
                 status=status.HTTP_400_BAD_REQUEST
             )
 
@@ -339,7 +339,6 @@ def creer_ordonnance(request):
         )
 
     except Exception as e:
-        print(f"Error: {str(e)}")  # Log the error message
         print("Error:", e)
         return Response(
             {'error': 'An error occurred while creating the ordonnance.'},
@@ -356,18 +355,14 @@ def creer_bilan_biologique(request):
     try:
         # Extract data from the request
         nss = request.data.get('nss')
-        laborantin_id = request.data.get('laborantin_id')
-        resultat_analyse = request.data.get('resultat_analyse')
-        resultat_examen_imagerie = request.data.get('resultat_examen_imagerie')
-        date_examen_str = request.data.get('date_examen')
+        laborantin_id = request.data.get('laborantinId')
+        print('laborantin ID', laborantin_id)
+        date_examen_str = request.data.get('time')
         glycemie = request.data.get('glycemie')
-        pression_arterielle = request.data.get('pression_arterielle')
+        pression_arterielle = request.data.get('pression')
         cholesterol = request.data.get('cholesterol')
-
-        # Validate required fields
-        if not nss or not laborantin_id or not resultat_analyse:
-            return Response({'message': 'NSS, Laborantin ID, and Resultat Analyse are required.'}, 
-                            status=status.HTTP_400_BAD_REQUEST)
+        graphe = request.FILES.get('imageFile')
+        numero_consultation = request.data.get ('numcons')
 
         # Convert date_examen to datetime and make it timezone-aware
         if date_examen_str:
@@ -392,18 +387,24 @@ def creer_bilan_biologique(request):
         glycemie = float(glycemie) if glycemie else None
         cholesterol = float(cholesterol) if cholesterol else None
 
+         # Handle image conversion if provided
+        if graphe:
+            graphe = graphe  # No need to manually read the file; Django handles it
+        else:
+            graphe = None
+
         # Create BilanBiologique instance
         bilan_biologique = BilanBiologique.objects.create(
             dossier_patient=dossier_patient,
             laborantin=laborantin,
-            resultat_analyse=resultat_analyse,
-            resultat_examen_imagerie=resultat_examen_imagerie,
             date_examen=date_examen,
-            graphe=None,  # Add logic for handling the graph if needed
+            graphe= graphe ,  
             glycemie=glycemie,
             pression_arterielle=pression_arterielle,
-            cholesterol=cholesterol
+            cholesterol=cholesterol,
+            numero_consultation = numero_consultation
         )
+
 
         return Response({'message': 'Bilan Biologique created successfully.'}, status=status.HTTP_201_CREATED)
 
@@ -414,62 +415,59 @@ def creer_bilan_biologique(request):
 
 from .serializers import BilanRadiologiqueSerializer
 
+
 @api_view(['POST'])
 def creer_bilan_radiologique(request):
     try:
         # Extract data from the request
         nss = request.data.get('nss')
-        radiologue_id = request.data.get('radiologue_id')
-        compte_rendu = request.data.get('compte_rendu')
-        date_examen_str = request.data.get('date_examen')
-        image_file = request.FILES.get('image')
-
-        # Validate required fields
-        if not nss or not radiologue_id or not compte_rendu:
-            return Response({'message': 'NSS, Radiologue ID, and Compte Rendu are required.'}, 
-                            status=status.HTTP_400_BAD_REQUEST)
-
-        # Convert date_examen to datetime and make it timezone-aware
-        if date_examen_str:
-            date_examen = make_aware(datetime.strptime(date_examen_str, "%Y-%m-%dT%H:%M:%S"))
-        else:
-            date_examen = make_aware(datetime.now())
-
+        radiologue_id = request.data.get('radiologueId')
+        compte_rendu = request.data.get('compteRendu')
+        date_examen_str = request.data.get('time')
+        numero_consultation = request.data.get('numcons')  # Expecting a number from the request
+        image_file = request.FILES.get('imageRadiographie')
+        
+        
         # Validate and get the radiologue
         try:
             radiologue = Radiologue.objects.get(id=radiologue_id)
         except Radiologue.DoesNotExist:
-            return Response({'message': 'Radiologue not found or invalid ID.'}, status=status.HTTP_404_NOT_FOUND)
-
+            return Response({'exists': False, 'message': 'Radiologue not found or invalid ID.'}, status=status.HTTP_404_NOT_FOUND)
+        
         # Validate and get the patient and dossier_patient
         try:
             patient = Patient.objects.get(nss=nss)
             dossier_patient = DossierPatient.objects.get(patient=patient)
         except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
-            return Response({'message': 'Patient or Dossier Patient not found.'}, status=status.HTTP_404_NOT_FOUND)
-
+            return Response({'exists': False, 'message': 'Patient or Dossier Patient not found.'}, status=status.HTTP_404_NOT_FOUND)
+        
+        
         # Handle image conversion if provided
         if image_file:
-            image_data = image_file  # No need to manually read the file; Django handles it
+            image_data = image_file  # Django handles file reading
         else:
             image_data = None
-            
+
         # Create BilanRadiologique instance
         bilan_radiologique = BilanRadiologique.objects.create(
             dossier_patient=dossier_patient,
             radiologue=radiologue,
             compte_rendu=compte_rendu,
             images=image_data,
-            date_examen=date_examen
+            date_examen= date_examen_str,
+            numero_consultation=numero_consultation
         )
 
         # Serialize and return the response data
         serializer = BilanRadiologiqueSerializer(bilan_radiologique)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(
+            {'data': serializer.data, 'exists': True},  # Indicating that the bilan was successfully created
+            status=status.HTTP_201_CREATED
+        )
 
     except Exception as e:
-        return Response({'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+        return Response({'exists': False, 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
 
 @api_view(['POST'])
@@ -624,7 +622,7 @@ def get_soins_by_nss(request):
         soins_data = []
         for soin in soins_records:
             soins_data.append({
-                'infirmier': soin.infirmier.last_name if soin.infirmier else None,
+                'infirmier': soin.infirmier.first_name if soin.infirmier else None,
                 'observation_etat_patient': soin.observation_etat_patient,
                 'medicament_pris': soin.medicament_pris,
                 'description_soins': soin.description_soins,
@@ -638,3 +636,110 @@ def get_soins_by_nss(request):
 
     except Exception as e:
         return Response({'message': f'An unexpected error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@api_view(['POST'])
+def check_consultation_existence(request):
+    try:
+        
+        
+        # Extraire les données
+        nss = request.data.get('nss')
+        numero_consultation = request.data.get('numcons')
+        
+        # Vérifier les champs obligatoires
+        if not nss or not numero_consultation:
+            return Response(
+                {'exists': False, 'message': 'NSS and Consultation Number are required.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # Valider si le patient et le dossier patient existent
+        try:
+            patient = Patient.objects.get(nss=nss)
+            dossier_patient = DossierPatient.objects.get(patient=patient)
+        except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
+            return Response(
+                {'exists': False, 'message': 'Patient or Dossier Patient not found.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si la consultation existe
+        try:
+            consultation = Consultation.objects.get(
+                dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation
+            )
+        except Consultation.DoesNotExist:
+            return Response(
+                {'exists': False, 'message': 'Consultation not found for the given NSS and Consultation Number.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si le 'bilan radiologique' est dans les bilans prescrits
+        bilan_prescrit = [bilan.lower() for bilan in consultation.bilan_prescrit]
+        if 'bilan radiologique' not in bilan_prescrit:
+            return Response(
+                {'exists': False, 'message': 'Bilan radiologique is not prescribed for this consultation.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Retourner un succès si toutes les validations sont passées
+        return Response({'exists': True}, status=status.HTTP_200_OK)
+
+    except Exception as e:
+        return Response({'exists': False, 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+
+@api_view(['POST'])
+def check_consultation_existence_bilan_biologique(request):
+    try:
+        
+        
+        # Extraire les données
+        nss = request.data.get('nss')
+        numero_consultation = request.data.get('numcons')
+        
+        # Vérifier les champs obligatoires
+        if not nss or not numero_consultation:
+            return Response(
+                {'exists': False, 'message': 'NSS and Consultation Number are required.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        
+        # Valider si le patient et le dossier patient existent
+        try:
+            patient = Patient.objects.get(nss=nss)
+            dossier_patient = DossierPatient.objects.get(patient=patient)
+        except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
+            return Response(
+                {'exists': False, 'message': 'Patient or Dossier Patient not found.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si la consultation existe
+        try:
+            consultation = Consultation.objects.get(
+                dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation
+            )
+        except Consultation.DoesNotExist:
+            return Response(
+                {'exists': False, 'message': 'Consultation not found for the given NSS and Consultation Number.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si le 'bilan biologique' est dans les bilans prescrits
+        bilan_prescrit = [bilan.lower() for bilan in consultation.bilan_prescrit]
+        if 'bilan biologique' not in bilan_prescrit:
+            return Response(
+                {'exists': False, 'message': 'Bilan biologique is not prescribed for this consultation.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Retourner un succès si toutes les validations sont passées
+        return Response({'exists': True}, status=status.HTTP_200_OK)
+
+    except Exception as e:
+        return Response({'exists': False, 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    

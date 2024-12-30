@@ -21,7 +21,7 @@ from backendapp.views import login_view
 from backendapp.views import rechercher_dpi_par_nss
 from backendapp.views import creer_consultation
 from backendapp.views import Faire_soin
-from backendapp.views import creer_patient , creer_ordonnance ,creer_bilan_biologique, creer_bilan_radiologique, verifier_patient_par_nss, rechercher_dpi_par_nss, get_consultations_by_nss,get_soins_by_nss
+from backendapp.views import creer_patient , creer_ordonnance ,creer_bilan_biologique, creer_bilan_radiologique, verifier_patient_par_nss, rechercher_dpi_par_nss, get_consultations_by_nss,get_soins_by_nss, check_consultation_existence, check_consultation_existence_bilan_biologique
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,7 +36,8 @@ urlpatterns = [
     path('api/checkNss/', verifier_patient_par_nss, name='checkNss'),
     path('api/ConsultationbyNSS/', get_consultations_by_nss, name='ConsultationbyNSS'),
     path('api/soinsByNSS/', get_soins_by_nss, name='soinsByNSS'),
-
-
+    path('api/check_consultation_existence/', check_consultation_existence, name='check_consultation_existence'),
+    path('api/check_consultation_existence_bilan_biologique/', check_consultation_existence_bilan_biologique, name='check_consultation_existence_bilan_biologique'),
+    
 
 ]
