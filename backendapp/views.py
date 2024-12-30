@@ -470,12 +470,11 @@ def creer_bilan_radiologique(request):
 
 
 
+
+
 @api_view(['POST'])
 def creer_patient(request):
     # Extract the patient data from the request
-
-    print("2")
-
     data = request.data
     if not data:
         return Response({'error': 'No patient data provided.'}, status=status.HTTP_400_BAD_REQUEST)
@@ -486,40 +485,37 @@ def creer_patient(request):
     except Medecin.DoesNotExist:
         return Response({'error': 'Medecin not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-    # Create the DossierPatient instance first
+    # Create the DossierPatient instance
     dossier_patient = DossierPatient.objects.create(
         etat="actif",  # Default state for the dossier
-        antécédents="aucun",  # Empty by default
+        antécédents="aucun"  # Empty by default
     )
 
-    print('here !')
-    
-
-    # Prepare data for the patient (and the nested User fields)
+    # Map the data fields as per the JSON input
     patient_data = {
-        'username': data.get('username'),
+        'username': data.get('nss'),  # Username set as NSS
         'first_name': data.get('nom'),
         'last_name': data.get('prenom'),
         'email': data.get('email'),
-        'password': data.get('password'),
-        'role': 'Patient',  # Assigning the role as 'Patient'
-        'date_naissance': data.get('dateDeNaissance'),  # Assuming it's in a valid date format
+        'password': data.get('password'),  # Include the password here
+        'role': 'Patient',  # Fixed role
+        'date_naissance': data.get('dateDeNaissance'),
         'adresse': data.get('adresse'),
         'numero_telephone': data.get('numtel'),
         'nss': data.get('nss'),
         'telephone_urgence': data.get('numtelurg'),
         'mutuelle': data.get('mutuelle'),
-      
     }
 
-    # Use the PatientSerializer to validate and save the patient
+    # Use the PatientSerializer to validate the patient data
     serializer = PatientSerializer(data=patient_data)
-
     if serializer.is_valid():
-        # Save the patient instance
+        # Save the patient instance without hashing the password yet
         patient = serializer.save()
-        patient.medecin_traitant = medecin
-        patient.dossier_patient = dossier_patient
+        patient.set_password(patient_data['password'])  # Hash the password
+        patient.medecin_traitant = medecin  # Assign the Medecin traitant
+        patient.dossier_patient = dossier_patient  # Link the DossierPatient
+        patient.save()  # Save the fully prepared patient instance
 
         # Return the created patient data
         return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -527,8 +523,7 @@ def creer_patient(request):
     # If the serializer is not valid, return the error response
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-# THIS FUNCTION SHOULD BE REFACTORED ( IT DOES NOT EVEN HASH THE PASSWORD)
- 
+
 @api_view(['GET'])
 def verifier_patient_par_nss(request):
     # Get NSS from query parameters
