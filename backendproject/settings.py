@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # Use MySQL engine
         'NAME': 'gestion_dpi',  # Your database name
         'USER': 'root',         # MySQL user (e.g., root)
-        'PASSWORD': 'Besmala2004',    # Your MySQL password
+        'PASSWORD': 'e3g8dNUe8Agv2F9M',    # Your MySQL password
         'HOST': 'localhost',    # MySQL server address (localhost)
         'PORT': '3306',         # MySQL default port (3306)
     }
@@ -153,3 +153,7 @@ CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins to access the backend
 
 # CORS_ALLOW_CREDENTIALS = True  # Allow credentials (cookies, authorization headers)
 
+import os
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
