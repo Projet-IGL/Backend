@@ -178,10 +178,16 @@ def create_consultation(request):
 @api_view(['POST'])
 def creer_consultation(request):
     nss = request.data.get('dpi')
+    
     date_consultation = request.data.get('dateTime')
     bilan_prescrit = request.data.get('bilan')
     resume = request.data.get('resume')
+    medecin_id = request.data.get('medecinConsultant')  # Retrieve medecinConsultant ID
 
+    if not medecin_id:
+        return Response({'message': 'Medecin Consultant is required'}, status=status.HTTP_400_BAD_REQUEST)
+
+    
     # Check if nss is provided
     if not nss:
         return Response({'message': 'NSS is required'}, status=status.HTTP_400_BAD_REQUEST)
@@ -201,6 +207,11 @@ def creer_consultation(request):
         numero_consultation = last_consultation.numero_consultation + 1
     else:
         numero_consultation = 1  # First consultation for this patient
+    
+    try:
+        medecin_consultant = Medecin.objects.get(id=medecin_id)
+    except Medecin.DoesNotExist:
+        return Response({'message': 'Medecin Consultant not found.'}, status=status.HTTP_404_NOT_FOUND)
 
     # Create the Consultation object
     consultation = Consultation.objects.create(
@@ -209,6 +220,7 @@ def creer_consultation(request):
         numero_consultation=numero_consultation,
         bilan_prescrit=bilan_prescrit,
         resume=resume,
+        medecinConsultant=medecin_consultant,  # Associate medecinConsultant
     )
 
     # Return success response
@@ -974,5 +986,99 @@ def recuperer_ordonnance(request):
 
     except Exception as e:
         return Response({'exists': False, 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+'''
+@api_view(['GET'])
+def obtenir_consultation(request, consultation_id):
+    try:
+        # Récupérer la consultation par son ID
+        consultation = Consultation.objects.get(id=consultation_id)
 
+        # Récupérer les informations du patient et du dossier
+        dossier_patient = consultation.dossier_patient
+        patient = dossier_patient.patient
+
+        # Collecter toutes les informations relatives à la consultation
+        consultation_data = {
+            'consultation_id': consultation.id,
+            'numero_consultation': consultation.numero_consultation,
+            'date_consultation': consultation.date_consultation,
+            'bilan_prescrit': consultation.bilan_prescrit,
+            'resume': consultation.resume,
+            'medecinConsultant': {
+                'id': consultation.medecinConsultant.id,
+                'nom': consultation.medecinConsultant.nom,
+                'prenom': consultation.medecinConsultant.prenom,
+                'numero de tel ': consultation.
+            },
+            'patient': {
+                'nss': patient.nss,
+                'nom': patient.nom,
+                'prenom': patient.prenom,
+                'date_naissance': patient.date_naissance,
+            },
+            'dossier_patient': {
+                'id': dossier_patient.id,
+                'date_creation': dossier_patient.date_creation,
+            },
+        }
+
+        return Response(consultation_data, status=status.HTTP_200_OK)
     
+    except Consultation.DoesNotExist:
+        return Response({'message': 'Consultation not found.'}, status=status.HTTP_404_NOT_FOUND)
+'''
+
+@api_view(['POST'])
+def get_ordonnance_by_nss_and_consultation(request):
+    """
+    Retrieves ordonnance for a patient identified by their NSS and consultation number
+    if the bilan_prescrit contains 'ordonnance'.
+    """
+    nss = request.data.get('nss')  # Get the NSS from the request data
+    numero_consultation = request.data.get('numero_consultation')  # Get the consultation number
+
+    if not nss or not numero_consultation:
+        return Response({'message': 'NSS and numero_consultation are required.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        # Find the patient
+        patient = Patient.objects.get(nss=nss)
+
+        # Retrieve the consultation based on the patient's dossier and consultation number
+        consultation = Consultation.objects.filter(
+            dossier_patient=patient.dossier_patient,
+            numero_consultation=numero_consultation,
+            bilan_prescrit__contains='ordonnance'  # Check if 'ordonnance' is in bilan_prescrit
+        ).first()  # Get the first consultation matching the criteria
+
+        if not consultation:
+            return Response({'message': 'No consultation found matching the criteria.'}, status=status.HTTP_404_NOT_FOUND)
+
+        # Retrieve the ordonnance linked to the consultation
+        ordonnance = Ordonnance.objects.filter(consultation=consultation).first()
+
+        if not ordonnance:
+            return Response({'message': 'No ordonnance found for this consultation.'}, status=status.HTTP_404_NOT_FOUND)
+        medicaments = Medicament.objects.filter(ordonnance=ordonnance)
+        # Serialize ordonnance data
+        ordonnance_data = {
+            "dossier_patient_id": ordonnance.dossier_patient.id,
+            "consultation_id": ordonnance.consultation.id,
+            "medicaments": [
+                {
+                    "nom": medicament.nom,
+                    "dose": medicament.dose,
+                    "duree": medicament.duree,
+                }
+                for medicament in medicaments
+            # You can include more fields from the ordonnance model here as needed
+            ]
+        }
+
+        return Response(ordonnance_data, status=status.HTTP_200_OK)
+
+    except Patient.DoesNotExist:
+        return Response({'message': 'Patient with the provided NSS not found.'}, status=status.HTTP_404_NOT_FOUND)
+
+    except Exception as e:
+        return Response({'message': f'An unexpected error occurred: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

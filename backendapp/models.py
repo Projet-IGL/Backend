@@ -96,12 +96,13 @@ class Consultation(models.Model):
         ('bilan radiologique', 'Bilan Radiologique'),
         ('Aucun bilan', 'Aucun Bilan'),
     ]
-    #author = models.ForeignKey(Author, null=True, on_delete=models.SET_NULL)  # Référence à Author ou NULL
+  
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
     numero_consultation = models.IntegerField(default=0)
     date_consultation = models.DateTimeField()
     bilan_prescrit = MultiSelectField(choices=BILAN_CHOICES, blank=True)
     resume = models.TextField(blank=True, null=True)
+    medecinConsultant = models.ForeignKey(Medecin, on_delete=models.CASCADE,null=True)
 
     def __str__(self):
         return f"Consultation for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"

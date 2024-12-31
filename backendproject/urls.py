@@ -21,7 +21,7 @@ from backendapp.views import login_view
 from backendapp.views import rechercher_dpi_par_nss
 from backendapp.views import creer_consultation
 from backendapp.views import Faire_soin
-from backendapp.views import creer_patient , creer_ordonnance ,creer_bilan_biologique, creer_bilan_radiologique, verifier_patient_par_nss, rechercher_dpi_par_nss, get_consultations_by_nss,get_soins_by_nss, check_consultation_existence, check_consultation_existence_bilan_biologique, recuperer_bilan_biologique, recuperer_bilan_radiologique, recuperer_ordonnance
+from backendapp.views import creer_patient , creer_ordonnance ,creer_bilan_biologique, creer_bilan_radiologique, verifier_patient_par_nss, rechercher_dpi_par_nss, get_consultations_by_nss,get_soins_by_nss, check_consultation_existence, check_consultation_existence_bilan_biologique, recuperer_bilan_biologique, recuperer_bilan_radiologique, recuperer_ordonnance, get_ordonnance_by_nss_and_consultation
 
 
 urlpatterns = [
@@ -42,6 +42,7 @@ urlpatterns = [
     path('api/recuperer_bilan_biologique/', recuperer_bilan_biologique, name='recuperer_bilan_biologique'),
     path('api/recuperer_bilan_radiologique/', recuperer_bilan_radiologique, name='recuperer_bilan_radiologique'),
     path('api/recuperer_ordonnance/', recuperer_ordonnance, name='recuperer_ordonnance'),
+    path('api/get_ordonnace/', get_ordonnance_by_nss_and_consultation, name='get_ordonnance'),
     
 
 ]

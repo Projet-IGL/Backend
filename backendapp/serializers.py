@@ -96,6 +96,7 @@ class ConsultationSerializer(serializers.ModelSerializer):
     """
     Serializer for Consultation role.
     """
+    medecinConsultant = MedecinSerializer()
     class Meta:
         model = Consultation
         fields = '__all__'
@@ -138,7 +139,3 @@ class BilanRadiologiqueSerializer(serializers.ModelSerializer):
         model = BilanRadiologique
         fields = '__all__' 
 
-class ConsultationSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Consultation
-        fields = '__all__'
