@@ -362,7 +362,7 @@ def creer_bilan_biologique(request):
         pression_arterielle = request.data.get('pression')
         cholesterol = request.data.get('cholesterol')
         graphe = request.FILES.get('imageFile')
-        numero_consultation = request.data.get ('numcons')
+        numero_consultation = request.data.get('numcons')
 
         # Convert date_examen to datetime and make it timezone-aware
         if date_examen_str:
@@ -383,11 +383,17 @@ def creer_bilan_biologique(request):
         except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
             return Response({'message': 'Patient or Dossier Patient not found.'}, status=status.HTTP_404_NOT_FOUND)
 
+        # Check if a BilanBiologique already exists for this patient and consultation number
+        existing_bilan = BilanBiologique.objects.filter(dossier_patient=dossier_patient, numero_consultation=numero_consultation).first()
+        
+        if existing_bilan:
+            return Response({'message': 'Bilan Biologique already exists for this patient and consultation.'}, status=status.HTTP_400_BAD_REQUEST)
+
         # Convert glycemie and cholesterol to float if provided
         glycemie = float(glycemie) if glycemie else None
         cholesterol = float(cholesterol) if cholesterol else None
 
-         # Handle image conversion if provided
+        # Handle image conversion if provided
         if graphe:
             graphe = graphe  # No need to manually read the file; Django handles it
         else:
@@ -398,13 +404,12 @@ def creer_bilan_biologique(request):
             dossier_patient=dossier_patient,
             laborantin=laborantin,
             date_examen=date_examen,
-            graphe= graphe ,  
+            graphe=graphe,  
             glycemie=glycemie,
             pression_arterielle=pression_arterielle,
             cholesterol=cholesterol,
-            numero_consultation = numero_consultation
+            numero_consultation=numero_consultation
         )
-
 
         return Response({'message': 'Bilan Biologique created successfully.'}, status=status.HTTP_201_CREATED)
 
@@ -427,7 +432,6 @@ def creer_bilan_radiologique(request):
         numero_consultation = request.data.get('numcons')  # Expecting a number from the request
         image_file = request.FILES.get('imageRadiographie')
         
-        
         # Validate and get the radiologue
         try:
             radiologue = Radiologue.objects.get(id=radiologue_id)
@@ -441,6 +445,11 @@ def creer_bilan_radiologique(request):
         except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
             return Response({'exists': False, 'message': 'Patient or Dossier Patient not found.'}, status=status.HTTP_404_NOT_FOUND)
         
+        # Check if a Bilan Radiologique already exists for this patient and consultation
+        existing_bilan = BilanRadiologique.objects.filter(dossier_patient=dossier_patient, numero_consultation=numero_consultation).first()
+        
+        if existing_bilan:
+            return Response({'exists': False, 'message': 'A Bilan Radiologique already exists for this patient and consultation.'}, status=status.HTTP_400_BAD_REQUEST)
         
         # Handle image conversion if provided
         if image_file:
@@ -448,13 +457,13 @@ def creer_bilan_radiologique(request):
         else:
             image_data = None
 
-        # Create BilanRadiologique instance
+        # Create Bilan Radiologique instance
         bilan_radiologique = BilanRadiologique.objects.create(
             dossier_patient=dossier_patient,
             radiologue=radiologue,
             compte_rendu=compte_rendu,
             images=image_data,
-            date_examen= date_examen_str,
+            date_examen=date_examen_str,
             numero_consultation=numero_consultation
         )
 
@@ -737,4 +746,233 @@ def check_consultation_existence_bilan_biologique(request):
 
     except Exception as e:
         return Response({'exists': False, 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+
+@api_view(['POST'])
+def recuperer_bilan_biologique(request):
+    try:
+        # Extraire les données de la requête
+        nss = request.data.get('nss')
+        numero_consultation = request.data.get('numcons')
+
+        # Vérifier que les champs nécessaires sont fournis
+        if not nss or not numero_consultation:
+            return Response(
+                {'exists': False, 'message': 'NSS et Numéro de Consultation sont requis.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Vérifier si le patient existe
+        try:
+            patient = Patient.objects.get(nss=nss)
+            dossier_patient = DossierPatient.objects.get(patient=patient)
+        except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
+            return Response(
+                {'exists': False, 'message': 'Patient ou Dossier Patient introuvable.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si la consultation existe
+        try:
+            consultation = Consultation.objects.get(
+                dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation
+            )
+        except Consultation.DoesNotExist:
+            return Response(
+                {'exists': False, 'message': 'Consultation introuvable pour le NSS et Numéro de Consultation donnés.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si 'bilan biologique' est prescrit
+        bilan_prescrit = [bilan.lower() for bilan in consultation.bilan_prescrit]
+        if 'bilan biologique' not in bilan_prescrit:
+            return Response(
+                {'exists': False, 'message': 'Bilan biologique n\'est pas prescrit pour cette consultation.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Si le bilan biologique est prescrit, rechercher les données correspondantes
+        try:
+            bilan_biologique = BilanBiologique.objects.filter(
+                dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation
+            ).last()
+        except BilanBiologique.DoesNotExist:
+            return Response(
+                {'exists': False, 'message': 'Bilan biologique non trouvé pour cette consultation.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Retourner les détails du bilan biologique trouvé
+        return Response(
+            {
+                'exists': True,
+                'bilan_biologique': {
+                    'glycemie': bilan_biologique.glycemie,
+                    'pression_arterielle': bilan_biologique.pression_arterielle,
+                    'cholesterol': bilan_biologique.cholesterol,
+                    'date_examen': bilan_biologique.date_examen,
+                    'graphe': bilan_biologique.graphe.url if bilan_biologique.graphe else None
+                }
+            },
+            status=status.HTTP_200_OK
+        )
+
+    except Exception as e:
+        return Response({'exists': False, 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+
+
+@api_view(['POST'])
+def recuperer_bilan_radiologique(request):
+    try:
+        # Extraire les données de la requête
+        nss = request.data.get('nss')
+        numero_consultation = request.data.get('numcons')
+
+        # Vérifier que les champs nécessaires sont fournis
+        if not nss or not numero_consultation:
+            return Response(
+                {'exists': False, 'message': 'NSS et Numéro de Consultation sont requis.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Vérifier si le patient existe
+        try:
+            patient = Patient.objects.get(nss=nss)
+            dossier_patient = DossierPatient.objects.get(patient=patient)
+        except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
+            return Response(
+                {'exists': False, 'message': 'Patient ou Dossier Patient introuvable.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si la consultation existe
+        try:
+            consultation = Consultation.objects.get(
+                dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation
+            )
+        except Consultation.DoesNotExist:
+            return Response(
+                {'exists': False, 'message': 'Consultation introuvable pour le NSS et Numéro de Consultation donnés.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si 'bilan radiologique' est prescrit
+        bilan_prescrit = [bilan.lower() for bilan in consultation.bilan_prescrit]
+        if 'bilan radiologique' not in bilan_prescrit:
+            return Response(
+                {'exists': False, 'message': 'Bilan radiologique n\'est pas prescrit pour cette consultation.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Si le bilan radiologique est prescrit, rechercher les données correspondantes
+        try:
+            bilan_radiologique = BilanRadiologique.objects.filter(
+                dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation
+            ).last()
+        except BilanRadiologique.DoesNotExist:
+            return Response(
+                {'exists': False, 'message': 'Bilan radiologique non trouvé pour cette consultation.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Retourner les détails du bilan radiologique trouvé
+        return Response(
+            {
+                'exists': True,
+                'bilan_radiologique': {
+                    'compte_rendu': bilan_radiologique.compte_rendu,
+                    'date_examen': bilan_radiologique.date_examen,
+                    'images': bilan_radiologique.images.url if bilan_radiologique.images else None
+                }
+            },
+            status=status.HTTP_200_OK
+        )
+
+    except Exception as e:
+        return Response({'exists': False, 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    
+
+
+@api_view(['POST'])
+def recuperer_ordonnance(request):
+    try:
+        # Extraire les données de la requête
+        nss = request.data.get('nss')
+        numero_consultation = request.data.get('numcons')
+
+        # Vérifier que les champs nécessaires sont fournis
+        if not nss or not numero_consultation:
+            return Response(
+                {'exists': False, 'message': 'NSS et Numéro de Consultation sont requis.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Vérifier si le patient existe
+        try:
+            patient = Patient.objects.get(nss=nss)
+            dossier_patient = DossierPatient.objects.get(patient=patient)
+        except (Patient.DoesNotExist, DossierPatient.DoesNotExist):
+            return Response(
+                {'exists': False, 'message': 'Patient ou Dossier Patient introuvable.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si la consultation existe
+        try:
+            consultation = Consultation.objects.get(
+                dossier_patient=dossier_patient,
+                numero_consultation=numero_consultation
+            )
+        except Consultation.DoesNotExist:
+            return Response(
+                {'exists': False, 'message': 'Consultation introuvable pour le NSS et Numéro de Consultation donnés.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Vérifier si une ordonnance existe pour cette consultation
+        ordonnance = Ordonnance.objects.filter(
+            dossier_patient=dossier_patient,
+            consultation=consultation
+        ).last()  # This will return None if no ordonnance is found
+
+        if not ordonnance:
+            return Response(
+                {'exists': False, 'message': 'Ordonnance non trouvée pour cette consultation.'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        # Récupérer les médicaments associés à l'ordonnance
+        medicaments = Medicament.objects.filter(ordonnance=ordonnance)
+
+        # Construire la liste des médicaments
+        medicaments_data = []
+        for medicament in medicaments:
+            medicaments_data.append({
+                'nom': medicament.nom,
+                'dose': medicament.dose,
+                'duree': medicament.duree
+            })
+
+        # Retourner les informations de l'ordonnance et des médicaments
+        return Response(
+            {
+                'exists': True,
+                'ordonnance': {
+                    'id': ordonnance.id,
+                    'consultation_id': ordonnance.consultation.id,
+                    'dossier_patient_id': ordonnance.dossier_patient.id
+                },
+                'medicaments': medicaments_data
+            },
+            status=status.HTTP_200_OK
+        )
+
+    except Exception as e:
+        return Response({'exists': False, 'message': str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     
