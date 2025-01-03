@@ -12,6 +12,7 @@ djangorestframework = "*"
 django-multiselectfield = "*"
 pillow = "*"
 pytest = "*"
+selenium = "*"
 
 [dev-packages]
 
