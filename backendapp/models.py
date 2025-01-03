@@ -54,7 +54,7 @@ class Patient(User):
         null = True,
         blank = True,
     )
-    telephone_urgence = models.CharField(max_length=15, unique=True,null = True , blank = True)
+    telephone_urgence = models.CharField(max_length=15,null = True , blank = True)
 
     class Meta:
         db_table = 'patients'  # Custom table name for the model
