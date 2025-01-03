@@ -46,10 +46,6 @@ urlpatterns = [
     path('api/recuperer_bilan_radiologique/', recuperer_bilan_radiologique, name='recuperer_bilan_radiologique'),
     path('api/recuperer_ordonnance/', recuperer_ordonnance, name='recuperer_ordonnance'),
     path('api/get_ordonnace/', get_ordonnance_by_nss_and_consultation, name='get_ordonnance'),
-
 ]
-
-
-
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
