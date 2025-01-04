@@ -8,7 +8,12 @@
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../backendproject'))
+
+
+sys.path.insert(0, os.path.abspath('../..')) 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'backendproject.settings'
+import django
+django.setup()
 
 
 project = 'Gestion_DPI_backend'
@@ -19,16 +24,20 @@ release = '1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon','rst2pdf.pdfbuilder','sphinx.ext.autosummary',]
 
 templates_path = ['_templates']
 exclude_patterns = []
 
-language = 'french'
+language = 'fr'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
+
+
 html_static_path = ['_static']
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon',]
+
+
+

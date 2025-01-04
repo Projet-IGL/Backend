@@ -6,7 +6,7 @@ from multiselectfield import MultiSelectField
 class User(AbstractUser):
     """
     Modèle personnalisé d'utilisateur.
-
+    : noindex:
     Attributes:
         role (str): Le rôle de l'utilisateur parmi les choix disponibles (administrateur, patient, etc.).
         date_naissance (date): Date de naissance de l'utilisateur (peut être vide pour les super-utilisateurs).
@@ -51,7 +51,7 @@ class Medecin(User):
 class Patient(User):
     """
     Modèle spécifique pour les patients.
-
+    : noindex:
     Attributes:
         nss (str): Numéro de sécurité sociale unique.
         medecin_traitant (ForeignKey): Médecin traitant associé au patient.
@@ -111,7 +111,7 @@ class Radiologue(User):
 class DossierPatient(models.Model):
     """
     Modèle représentant le dossier médical d'un patient.
-
+    : noindex:
     Attributes:
         etat (str): État général du dossier (facultatif).
         antécédents (TextField): Antécédents médicaux du patient (facultatif).
@@ -126,7 +126,7 @@ class DossierPatient(models.Model):
 class Consultation(models.Model):
     """
     Modèle représentant une consultation médicale.
-
+    : noindex:
     Attributes:
         dossier_patient (ForeignKey): Référence au dossier du patient.
         numero_consultation (int): Numéro unique de la consultation.
@@ -158,7 +158,7 @@ class Consultation(models.Model):
 class Soins(models.Model):
     """
     Modèle représentant les soins administrés à un patient.
-
+    : noindex:
     Attributes:
         dossier_patient (ForeignKey): Référence au dossier du patient.
         infirmier (ForeignKey): Référence à l'infirmier ayant administré les soins.
@@ -190,7 +190,7 @@ class Soins(models.Model):
 class Medicament(models.Model):
     """
     Modèle représentant un médicament prescrit.
-
+    : noindex:
     Attributes:
         ordonnance (ForeignKey): Référence à l'ordonnance associée.
         nom (str): Nom du médicament.
@@ -216,7 +216,7 @@ class Medicament(models.Model):
 class Ordonnance(models.Model):
     """
     Modèle représentant une ordonnance médicale.
-
+    : noindex:
     Attributes:
         dossier_patient (ForeignKey): Référence au dossier du patient.
         consultation (ForeignKey): Référence à la consultation associée.
@@ -234,15 +234,15 @@ class Ordonnance(models.Model):
 class BilanBiologique(models.Model):
     """
     Modèle représentant un bilan biologique.
-
+    : noindex:
     Attributes:
         dossier_patient (ForeignKey): Référence au dossier du patient.
         laborantin (ForeignKey): Référence au laborantin ayant effectué le bilan.
         date_examen (datetime): Date de l'examen.
         graphe (ImageField): Graphe associé au bilan (facultatif).
-        glycemie (DecimalField): Glycémie mesurée (facultatif).
+        glycemie (DecimalField): Glycémie mesurée (facultatif).  
         pression_arterielle (str): Pression artérielle mesurée (facultatif).
-        cholesterol (DecimalField): Cholestérol mesuré (facultatif).
+        cholesterol (DecimalField): Cholestérol mesuré (facultatif).  
         numero_consultation (int): Numéro de consultation associé.
     """
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE)
@@ -256,8 +256,15 @@ class BilanBiologique(models.Model):
     date_examen = models.DateTimeField()
     graphe = models.ImageField(null=True, blank=True)
     glycemie = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    """
+    : noindex:
+    """
+    
     pression_arterielle = models.CharField(max_length=20, null=True, blank=True)
-    cholesterol = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
+    cholesterol = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True) # :no-index:
+    """
+    : noindex:
+    """
     numero_consultation = models.IntegerField(default=1)
 
     def __str__(self):
@@ -270,7 +277,7 @@ class BilanBiologique(models.Model):
 class BilanRadiologique(models.Model):
     """
     Modèle représentant un bilan radiologique.
-
+    : noindex:
     Attributes:
         dossier_patient (ForeignKey): Référence au dossier du patient.
         radiologue (ForeignKey): Référence au radiologue ayant effectué le bilan.
