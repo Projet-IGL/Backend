@@ -10,9 +10,23 @@ Add your content using ``reStructuredText`` syntax. See the
 `reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
 documentation for details.
 
+.. automodule:: backendapp.tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
-
-
+.. automodule:: backendapp.serializers
+   :members:
+   :undoc-members:
+   :show-inheritance:
+.. automodule:: backendapp.apps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+.. automodule:: backendapp.admin
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 .. automodule:: backendapp.models
    :members:
@@ -20,6 +34,19 @@ documentation for details.
    :show-inheritance:
 
 .. automodule:: backendapp.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+.. automodule:: backendproject.urls
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: backendproject.wsgi
+   :members:
+   :undoc-members:
+   :show-inheritance:
+.. automodule:: backendproject.asgi
    :members:
    :undoc-members:
    :show-inheritance:
