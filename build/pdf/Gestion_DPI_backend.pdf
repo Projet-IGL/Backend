@@ -621,35 +621,35 @@ endobj
 91 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.add_fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.add_fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 696.6394 251.7457 708.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 92 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.add_fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.add_fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 678.6394 262.8857 690.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 93 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.MedecinAdmin.add_fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.MedecinAdmin.add_fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 660.6394 253.4257 672.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 94 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdmin.add_fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdmin.add_fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 642.6394 246.7657 654.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 95 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.add_fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.add_fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 624.6394 266.2157 636.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -731,42 +731,42 @@ endobj
 111 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.admin'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.admin'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 345.2394 92.80575 357.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 112 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.apps'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.apps'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 314.2394 92.80575 326.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 113 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.models'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.models'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 283.2394 92.80575 295.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 114 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.serializers'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.serializers'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 252.2394 92.80575 264.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 115 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.tests'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.tests'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 221.2394 92.80575 233.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 116 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.views'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.views'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 190.2394 92.80575 202.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -778,21 +778,21 @@ endobj
 118 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendproject.asgi'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendproject.asgi'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 141.2394 92.80575 153.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 119 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendproject.urls'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendproject.urls'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 110.2394 92.80575 122.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 120 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendproject.wsgi'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendproject.wsgi'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 79.23937 92.80575 91.23937 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1019,7 +1019,7 @@ endobj
 165 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Medecin.consultation_set'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Medecin.consultation_set'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 144.6394 498.9802 156.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1139,14 +1139,14 @@ endobj
 186 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.BilanRadiologique.date_examen'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.BilanRadiologique.date_examen'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 588.6394 286.3654 600.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 187 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#id8'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#id8'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 576.6394 71.13575 588.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1228,42 +1228,42 @@ endobj
 203 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.BilanRadiologique.dossier_patient'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.BilanRadiologique.dossier_patient'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 366.6394 272.8857 378.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 204 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Consultation.dossier_patient'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Consultation.dossier_patient'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 348.6394 247.8757 360.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 205 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Ordonnance.dossier_patient'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Ordonnance.dossier_patient'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 330.6394 247.3257 342.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 206 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Patient.dossier_patient'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Patient.dossier_patient'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 312.6394 223.4257 324.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 207 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#id22'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#id22'\))
 >> /Border [ 0 0 0 ] /Rect [ 226.2057 312.6394 237.3257 324.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 208 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Soins.dossier_patient'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Soins.dossier_patient'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 294.6394 217.3057 306.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1280,35 +1280,35 @@ endobj
 211 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.BilanRadiologique.dossier_patient_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.BilanRadiologique.dossier_patient_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 246.6394 272.8857 258.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 212 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Consultation.dossier_patient_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Consultation.dossier_patient_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 228.6394 247.8757 240.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 213 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Ordonnance.dossier_patient_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Ordonnance.dossier_patient_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 210.6394 247.3257 222.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 214 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Patient.dossier_patient_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Patient.dossier_patient_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 192.6394 223.4257 204.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 215 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Soins.dossier_patient_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Soins.dossier_patient_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 174.6394 217.3057 186.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1385,196 +1385,196 @@ endobj
 230 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.AdministrateurSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.AdministrateurSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 624.2394 552.8702 636.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 231 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.AdministrateurSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.AdministrateurSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 612.2394 381.1402 624.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 232 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.BilanBiologiqueSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.BilanBiologiqueSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 594.2394 555.1102 606.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 233 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.BilanBiologiqueSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.BilanBiologiqueSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 582.2394 383.3602 594.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 234 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.BilanRadiologiqueSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.BilanRadiologiqueSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 564.2394 551.2202 576.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 235 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.BilanRadiologiqueSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.BilanRadiologiqueSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 552.2394 398.9202 564.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 236 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.ConsultationSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.ConsultationSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 534.2394 553.9902 546.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 237 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.ConsultationSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.ConsultationSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 522.2394 371.1402 534.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 238 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.DossierPatientSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.DossierPatientSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 504.2394 553.4302 516.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 239 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.DossierPatientSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.DossierPatientSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 492.2394 381.1402 504.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 240 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.InfirmierSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.InfirmierSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 474.2394 362.8102 486.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 241 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.InfirmierSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.InfirmierSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 462.2394 540.0702 474.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 242 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.LaborantinSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.LaborantinSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 444.2394 362.8102 456.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 243 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.LaborantinSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.LaborantinSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 432.2394 551.2102 444.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 244 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.MedecinSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.MedecinSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 414.2394 362.8102 426.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 245 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.MedecinSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.MedecinSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 402.2394 541.7502 414.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 246 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.MedicamentsSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.MedicamentsSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 384.2394 553.4302 396.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 247 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.MedicamentsSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.MedicamentsSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 372.2394 375.5802 384.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 248 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.OrdonnaceSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.OrdonnaceSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 354.2394 362.8102 366.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 249 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.OrdonnaceSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.OrdonnaceSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 342.2394 553.4302 354.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 250 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.PatientSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.PatientSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 324.2394 362.8102 336.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 251 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.PatientSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.PatientSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 312.2394 535.0902 324.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 252 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.RadiologueSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.RadiologueSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 294.2394 362.8102 306.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 253 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.RadiologueSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.RadiologueSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 282.2394 554.5402 294.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 254 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.SoinsSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.SoinsSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 264.2394 362.8102 276.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 255 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.SoinsSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.SoinsSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 252.2394 528.9702 264.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 256 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.UserSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.UserSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 234.2394 362.8102 246.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 257 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.UserSerializer.Meta.fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.UserSerializer.Meta.fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 222.2394 525.0702 234.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1591,35 +1591,35 @@ endobj
 260 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 174.2394 520.6402 186.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 261 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 156.2394 531.7802 168.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 262 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.MedecinAdmin.fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.MedecinAdmin.fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 138.2394 522.3202 150.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 263 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdmin.fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdmin.fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 120.2394 515.6602 132.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 264 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.fieldsets'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.fieldsets'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 102.2394 535.1102 114.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1705,7 +1705,7 @@ endobj
 278 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.BilanRadiologique.get_next_by_date_examen'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.BilanRadiologique.get_next_by_date_examen'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 616.6394 281.2257 628.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1762,7 +1762,7 @@ endobj
 289 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.BilanRadiologique.get_previous_by_date_examen'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.BilanRadiologique.get_previous_by_date_examen'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 448.6394 281.2257 460.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1834,49 +1834,49 @@ endobj
 303 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.BilanRadiologique.id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.BilanRadiologique.id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 196.2394 272.8857 208.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 304 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Consultation.id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Consultation.id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 178.2394 247.8757 190.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 305 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.DossierPatient.id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.DossierPatient.id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 160.2394 257.3157 172.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 306 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Medicament.id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Medicament.id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 142.2394 246.7557 154.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 307 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Ordonnance.id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Ordonnance.id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 124.2394 247.3257 136.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 308 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Soins.id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Soins.id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 106.2394 217.3057 118.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 309 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.User.id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.User.id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 88.23937 213.4057 100.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1908,7 +1908,7 @@ endobj
 315 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.User.infirmier'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.User.infirmier'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 769.0394 482.3002 781.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -1985,7 +1985,7 @@ endobj
 330 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.User.laborantin'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.User.laborantin'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 498.6394 482.3002 510.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2062,35 +2062,35 @@ endobj
 345 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.list_display'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.list_display'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 252.6394 520.6402 264.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 346 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.list_display'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.list_display'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 234.6394 531.7802 246.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 347 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.MedecinAdmin.list_display'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.MedecinAdmin.list_display'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 216.6394 522.3202 228.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 348 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdmin.list_display'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdmin.list_display'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 198.6394 515.6602 210.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 349 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.list_display'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.list_display'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 180.6394 535.1102 192.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2220,42 +2220,42 @@ endobj
 372 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.media'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.media'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 553.0394 260.6357 565.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 373 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.media'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.media'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 535.0394 271.7757 547.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 374 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.MedecinAdmin.media'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.MedecinAdmin.media'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 517.0394 262.3157 529.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 375 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdmin.media'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdmin.media'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 499.0394 255.6557 511.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 376 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdminForm.media'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdminForm.media'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 481.0394 278.9857 493.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 377 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.media'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.media'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 463.0394 275.1057 475.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2327,308 +2327,308 @@ endobj
 391 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 241.0394 251.7457 253.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 392 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 223.0394 262.8857 235.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 393 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.MedecinAdmin.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.MedecinAdmin.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 205.0394 253.4257 217.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 394 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdmin.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdmin.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 187.0394 246.7657 199.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 395 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdminForm.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdminForm.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 169.0394 93.91575 181.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 396 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdminForm.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdminForm.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 157.0394 258.4257 169.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 397 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 139.0394 266.2157 151.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 398 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.AdministrateurSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.AdministrateurSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 121.0394 283.9757 133.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 399 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.AdministrateurSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.AdministrateurSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 109.0394 112.2457 121.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 400 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.BilanBiologiqueSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.BilanBiologiqueSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 91.03937 286.2157 103.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 401 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.BilanBiologiqueSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.BilanBiologiqueSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 79.03937 114.4657 91.03937 ] /Subtype /Link /Type /Annot
 >>
 endobj
 402 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.BilanRadiologiqueSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.BilanRadiologiqueSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 61.03937 282.3257 73.03937 ] /Subtype /Link /Type /Annot
 >>
 endobj
 403 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.BilanRadiologiqueSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.BilanRadiologiqueSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 49.03937 130.0257 61.03937 ] /Subtype /Link /Type /Annot
 >>
 endobj
 404 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.ConsultationSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.ConsultationSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 787.0394 553.9902 799.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 405 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.ConsultationSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.ConsultationSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 775.0394 371.1402 787.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 406 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.DossierPatientSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.DossierPatientSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 757.0394 553.4302 769.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 407 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.DossierPatientSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.DossierPatientSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 745.0394 381.1402 757.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 408 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.InfirmierSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.InfirmierSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 727.0394 362.8102 739.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 409 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.InfirmierSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.InfirmierSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 715.0394 540.0702 727.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 410 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.LaborantinSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.LaborantinSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 697.0394 362.8102 709.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 411 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.LaborantinSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.LaborantinSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 685.0394 551.2102 697.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 412 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.MedecinSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.MedecinSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 667.0394 362.8102 679.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 413 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.MedecinSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.MedecinSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 655.0394 541.7502 667.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 414 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.MedicamentsSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.MedicamentsSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 637.0394 553.4302 649.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 415 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.MedicamentsSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.MedicamentsSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 625.0394 375.5802 637.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 416 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.OrdonnaceSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.OrdonnaceSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 607.0394 362.8102 619.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 417 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.OrdonnaceSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.OrdonnaceSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 595.0394 553.4302 607.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 418 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.PatientSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.PatientSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 577.0394 362.8102 589.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 419 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.PatientSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.PatientSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 565.0394 535.0902 577.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 420 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.RadiologueSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.RadiologueSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 547.0394 362.8102 559.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 421 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.RadiologueSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.RadiologueSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 535.0394 554.5402 547.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 422 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.SoinsSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.SoinsSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 517.0394 362.8102 529.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 423 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.SoinsSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.SoinsSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 505.0394 528.9702 517.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 424 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.UserSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.UserSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 487.0394 362.8102 499.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 425 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.serializers.UserSerializer.Meta.model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.serializers.UserSerializer.Meta.model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 475.0394 525.0702 487.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 426 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.admin'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.admin'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 444.0394 413.4002 456.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 427 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.apps'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.apps'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 426.0394 407.8502 438.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 428 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.models'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.models'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 408.0394 418.4002 420.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 429 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.serializers'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.serializers'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 390.0394 431.1702 402.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 430 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.tests'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.tests'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 372.0394 407.2902 384.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 431 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendapp.views'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendapp.views'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 354.0394 411.1702 366.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 432 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendproject.asgi'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendproject.asgi'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 336.0394 417.8402 348.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 433 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendproject.urls'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendproject.urls'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 318.0394 415.6102 330.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 434 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#module-backendproject.wsgi'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#module-backendproject.wsgi'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 300.0394 419.5002 312.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2680,28 +2680,28 @@ endobj
 444 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.BilanRadiologique.numero_consultation'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.BilanRadiologique.numero_consultation'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 149.6394 555.2598 161.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 445 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#id10'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#id10'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 137.6394 340.0302 149.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 446 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Consultation.numero_consultation'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Consultation.numero_consultation'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 119.6394 516.7702 131.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 447 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#id15'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#id15'\))
 >> /Border [ 0 0 0 ] /Rect [ 519.5502 119.6394 530.6702 131.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2742,42 +2742,42 @@ endobj
 452 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.BilanRadiologique.objects'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.BilanRadiologique.objects'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 748.6394 272.8857 760.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 453 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Consultation.objects'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Consultation.objects'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 730.6394 247.8757 742.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 454 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.DossierPatient.objects'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.DossierPatient.objects'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 712.6394 257.3157 724.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 455 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Medicament.objects'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Medicament.objects'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 694.6394 246.7557 706.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 456 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Ordonnance.objects'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Ordonnance.objects'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 676.6394 247.3257 688.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 457 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Soins.objects'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Soins.objects'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 658.6394 217.3057 670.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2809,35 +2809,35 @@ endobj
 463 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.ordering'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.ordering'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 580.6394 251.7457 592.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 464 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.ordering'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.ordering'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 562.6394 262.8857 574.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 465 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.MedecinAdmin.ordering'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.MedecinAdmin.ordering'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 544.6394 253.4257 556.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 466 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdmin.ordering'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdmin.ordering'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 526.6394 246.7657 538.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 467 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.ordering'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.ordering'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 508.6394 266.2157 520.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2904,7 +2904,7 @@ endobj
 480 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.DossierPatient.ordonnance_set'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.DossierPatient.ordonnance_set'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 298.6394 257.3157 310.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2931,7 +2931,7 @@ endobj
 485 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.User.patient'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.User.patient'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 184.2394 213.4057 196.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -2978,21 +2978,21 @@ endobj
 494 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Laborantin.patients'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Laborantin.patients'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 787.0394 508.4402 799.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 495 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Medecin.patients'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Medecin.patients'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 769.0394 498.9802 781.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 496 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Radiologue.patients'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Radiologue.patients'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 751.0394 511.7702 763.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -3044,7 +3044,7 @@ endobj
 506 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.User.radiologue'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.User.radiologue'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 594.6394 482.3002 606.6394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -3171,35 +3171,35 @@ endobj
 531 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.save_model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.save_model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 180.2394 528.9802 192.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 532 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.save_model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.save_model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 162.2394 540.1202 174.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 533 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.MedecinAdmin.save_model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.MedecinAdmin.save_model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 144.2394 530.6602 156.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 534 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdmin.save_model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdmin.save_model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 126.2394 524.0002 138.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 535 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.save_model'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.save_model'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 108.2394 543.4502 120.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -3216,7 +3216,7 @@ endobj
 538 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.search_fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.InfirmierAdmin.search_fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 328.9102 60.23937 520.6402 72.23937 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -3241,28 +3241,28 @@ endobj
 540 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.search_fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.LaborantinAdmin.search_fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 787.0394 262.8857 799.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 541 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.MedecinAdmin.search_fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.MedecinAdmin.search_fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 769.0394 253.4257 781.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 542 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.PatientAdmin.search_fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.PatientAdmin.search_fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 751.0394 246.7657 763.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 543 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.search_fields'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.admin.RadiologueAdmin.search_fields'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 733.0394 266.2157 745.0394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -3374,35 +3374,35 @@ endobj
 565 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Infirmier.user_ptr'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Infirmier.user_ptr'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 324.2394 228.4057 336.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 566 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Laborantin.user_ptr'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Laborantin.user_ptr'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 306.2394 239.5457 318.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 567 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Medecin.user_ptr'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Medecin.user_ptr'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 288.2394 230.0857 300.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 568 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Patient.user_ptr'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Patient.user_ptr'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 270.2394 223.4257 282.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 569 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Radiologue.user_ptr'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Radiologue.user_ptr'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 252.2394 242.8757 264.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -3419,35 +3419,35 @@ endobj
 572 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Infirmier.user_ptr_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Infirmier.user_ptr_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 204.2394 228.4057 216.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 573 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Laborantin.user_ptr_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Laborantin.user_ptr_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 186.2394 239.5457 198.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 574 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Medecin.user_ptr_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Medecin.user_ptr_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 168.2394 230.0857 180.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 575 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Patient.user_ptr_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Patient.user_ptr_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 150.2394 223.4257 162.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
 576 0 obj
 <<
 /A <<
-/S /URI /Type /Action /URI (file://C:\\Users\\LENOVO T14S\\Desktop\\BACKEND IGL DOC\\Backend\\/\('','#backendapp.models.Radiologue.user_ptr_id'\))
+/S /URI /Type /Action /URI (file://D:\\Django2\\Backend7\\Backend\\/\('','#backendapp.models.Radiologue.user_ptr_id'\))
 >> /Border [ 0 0 0 ] /Rect [ 60.01575 132.2394 242.8757 144.2394 ] /Subtype /Link /Type /Annot
 >>
 endobj
@@ -3557,7 +3557,7 @@ endobj
 endobj
 595 0 obj
 <<
-/Author () /CreationDate (D:20250105001648+01'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20250105001648+01'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+/Author () /CreationDate (D:20250105091339+01'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20250105091339+01'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
   /Subject (\(unspecified\)) /Title () /Trapped /False
 >>
 endobj
@@ -16620,598 +16620,598 @@ xref
 0000016498 00000 n 
 0000016667 00000 n 
 0000016836 00000 n 
-0000017111 00000 n 
-0000017387 00000 n 
-0000017660 00000 n 
-0000017933 00000 n 
-0000018209 00000 n 
-0000018378 00000 n 
-0000018547 00000 n 
-0000018716 00000 n 
-0000018885 00000 n 
-0000019055 00000 n 
-0000019225 00000 n 
-0000019395 00000 n 
-0000019565 00000 n 
-0000019735 00000 n 
-0000019905 00000 n 
-0000020075 00000 n 
-0000020245 00000 n 
-0000020415 00000 n 
-0000020585 00000 n 
-0000020755 00000 n 
-0000021009 00000 n 
-0000021262 00000 n 
-0000021517 00000 n 
-0000021777 00000 n 
-0000022031 00000 n 
-0000022285 00000 n 
-0000022455 00000 n 
-0000022712 00000 n 
-0000022969 00000 n 
-0000023226 00000 n 
-0000023396 00000 n 
-0000023566 00000 n 
-0000023736 00000 n 
-0000023906 00000 n 
-0000024076 00000 n 
-0000024246 00000 n 
-0000024416 00000 n 
-0000024586 00000 n 
-0000024756 00000 n 
-0000024926 00000 n 
-0000025096 00000 n 
-0000025266 00000 n 
-0000025435 00000 n 
-0000025605 00000 n 
-0000025773 00000 n 
-0000025943 00000 n 
-0000026113 00000 n 
-0000026283 00000 n 
-0000026453 00000 n 
-0000026623 00000 n 
-0000026793 00000 n 
-0000026961 00000 n 
-0000027131 00000 n 
-0000027300 00000 n 
-0000027470 00000 n 
-0000027640 00000 n 
-0000027810 00000 n 
-0000027980 00000 n 
-0000028150 00000 n 
-0000028320 00000 n 
-0000028490 00000 n 
-0000028660 00000 n 
-0000028830 00000 n 
-0000029000 00000 n 
-0000029170 00000 n 
-0000029340 00000 n 
-0000029510 00000 n 
-0000029680 00000 n 
-0000029850 00000 n 
-0000030020 00000 n 
-0000030190 00000 n 
-0000030360 00000 n 
-0000030530 00000 n 
-0000030700 00000 n 
-0000030973 00000 n 
-0000031142 00000 n 
-0000031312 00000 n 
-0000031480 00000 n 
-0000031650 00000 n 
-0000031820 00000 n 
-0000031990 00000 n 
-0000032888 00000 n 
-0000033058 00000 n 
-0000033228 00000 n 
-0000033398 00000 n 
-0000033568 00000 n 
-0000033738 00000 n 
-0000033908 00000 n 
-0000034078 00000 n 
-0000034248 00000 n 
-0000034418 00000 n 
-0000034588 00000 n 
-0000034758 00000 n 
-0000034928 00000 n 
-0000035098 00000 n 
-0000035376 00000 n 
-0000035610 00000 n 
-0000035780 00000 n 
-0000035950 00000 n 
-0000036120 00000 n 
-0000036290 00000 n 
-0000036460 00000 n 
-0000036630 00000 n 
-0000036800 00000 n 
-0000036970 00000 n 
-0000037140 00000 n 
-0000037310 00000 n 
-0000037480 00000 n 
-0000037650 00000 n 
-0000037820 00000 n 
-0000037990 00000 n 
-0000038160 00000 n 
-0000038442 00000 n 
-0000038719 00000 n 
-0000038994 00000 n 
-0000039266 00000 n 
-0000039501 00000 n 
-0000039771 00000 n 
-0000039941 00000 n 
-0000040111 00000 n 
-0000040396 00000 n 
-0000040676 00000 n 
-0000040954 00000 n 
-0000041229 00000 n 
-0000041502 00000 n 
-0000041672 00000 n 
-0000041842 00000 n 
-0000042012 00000 n 
-0000042182 00000 n 
-0000042352 00000 n 
-0000042522 00000 n 
-0000042692 00000 n 
-0000042862 00000 n 
-0000043032 00000 n 
-0000043202 00000 n 
-0000043372 00000 n 
-0000043542 00000 n 
-0000043712 00000 n 
-0000043882 00000 n 
-0000044172 00000 n 
-0000044462 00000 n 
-0000044753 00000 n 
-0000045044 00000 n 
-0000045337 00000 n 
-0000045630 00000 n 
-0000045918 00000 n 
-0000046206 00000 n 
-0000046496 00000 n 
-0000046786 00000 n 
-0000047071 00000 n 
-0000047356 00000 n 
-0000047642 00000 n 
-0000047928 00000 n 
-0000048211 00000 n 
-0000048494 00000 n 
-0000048781 00000 n 
-0000049068 00000 n 
-0000049353 00000 n 
-0000049638 00000 n 
-0000049921 00000 n 
-0000050204 00000 n 
-0000050490 00000 n 
-0000050776 00000 n 
-0000051057 00000 n 
-0000051338 00000 n 
-0000051618 00000 n 
-0000051898 00000 n 
-0000052068 00000 n 
-0000052238 00000 n 
-0000052510 00000 n 
-0000052783 00000 n 
-0000053053 00000 n 
-0000053323 00000 n 
-0000053596 00000 n 
-0000053766 00000 n 
-0000053936 00000 n 
-0000054936 00000 n 
-0000055106 00000 n 
-0000055276 00000 n 
-0000055446 00000 n 
-0000055616 00000 n 
-0000055786 00000 n 
-0000055956 00000 n 
-0000056126 00000 n 
-0000056296 00000 n 
-0000056466 00000 n 
-0000056636 00000 n 
-0000056926 00000 n 
-0000057096 00000 n 
-0000057266 00000 n 
-0000057436 00000 n 
-0000057606 00000 n 
-0000057776 00000 n 
-0000057946 00000 n 
-0000058116 00000 n 
-0000058286 00000 n 
-0000058456 00000 n 
-0000058626 00000 n 
-0000058920 00000 n 
-0000059090 00000 n 
-0000059260 00000 n 
-0000059430 00000 n 
-0000059600 00000 n 
-0000059770 00000 n 
-0000059940 00000 n 
-0000060110 00000 n 
-0000060280 00000 n 
-0000060450 00000 n 
-0000060620 00000 n 
-0000060790 00000 n 
-0000060960 00000 n 
-0000061130 00000 n 
-0000061399 00000 n 
-0000061663 00000 n 
-0000061929 00000 n 
-0000062191 00000 n 
-0000062453 00000 n 
-0000062710 00000 n 
-0000062966 00000 n 
-0000063136 00000 n 
-0000063306 00000 n 
-0000063476 00000 n 
-0000063646 00000 n 
-0000063816 00000 n 
-0000064079 00000 n 
-0000064249 00000 n 
-0000064419 00000 n 
-0000064589 00000 n 
-0000064759 00000 n 
-0000064929 00000 n 
-0000065099 00000 n 
-0000065268 00000 n 
-0000065438 00000 n 
-0000065608 00000 n 
-0000065778 00000 n 
-0000065948 00000 n 
-0000066118 00000 n 
-0000066288 00000 n 
-0000066458 00000 n 
-0000066722 00000 n 
-0000066892 00000 n 
-0000067062 00000 n 
-0000067232 00000 n 
-0000067402 00000 n 
-0000067572 00000 n 
-0000067742 00000 n 
-0000067907 00000 n 
-0000068077 00000 n 
-0000068246 00000 n 
-0000068416 00000 n 
-0000068586 00000 n 
-0000068756 00000 n 
-0000068926 00000 n 
-0000069096 00000 n 
-0000069371 00000 n 
-0000069647 00000 n 
-0000069920 00000 n 
-0000070193 00000 n 
-0000070469 00000 n 
-0000070639 00000 n 
-0000070809 00000 n 
-0000070979 00000 n 
-0000071149 00000 n 
-0000071319 00000 n 
-0000072260 00000 n 
-0000072430 00000 n 
-0000072600 00000 n 
-0000072770 00000 n 
-0000072940 00000 n 
-0000073110 00000 n 
-0000073280 00000 n 
-0000073450 00000 n 
-0000073620 00000 n 
-0000073790 00000 n 
-0000073960 00000 n 
-0000074130 00000 n 
-0000074300 00000 n 
-0000074470 00000 n 
-0000074640 00000 n 
-0000074810 00000 n 
-0000074980 00000 n 
-0000075248 00000 n 
-0000075517 00000 n 
-0000075783 00000 n 
-0000076049 00000 n 
-0000076319 00000 n 
-0000076588 00000 n 
-0000076758 00000 n 
-0000076928 00000 n 
-0000077098 00000 n 
-0000077268 00000 n 
-0000077438 00000 n 
-0000077608 00000 n 
-0000077778 00000 n 
-0000077948 00000 n 
-0000078118 00000 n 
-0000078288 00000 n 
-0000078458 00000 n 
-0000078628 00000 n 
-0000078798 00000 n 
-0000079066 00000 n 
-0000079335 00000 n 
-0000079601 00000 n 
-0000079867 00000 n 
-0000080142 00000 n 
-0000080417 00000 n 
-0000080686 00000 n 
-0000080975 00000 n 
-0000081264 00000 n 
-0000081554 00000 n 
-0000081844 00000 n 
-0000082136 00000 n 
-0000082428 00000 n 
-0000082715 00000 n 
-0000083002 00000 n 
-0000083291 00000 n 
-0000083580 00000 n 
-0000083864 00000 n 
-0000084148 00000 n 
-0000084433 00000 n 
-0000084718 00000 n 
-0000085000 00000 n 
-0000085282 00000 n 
-0000085568 00000 n 
-0000085854 00000 n 
-0000086138 00000 n 
-0000086422 00000 n 
-0000086704 00000 n 
-0000086986 00000 n 
-0000087271 00000 n 
-0000087556 00000 n 
-0000087836 00000 n 
-0000088116 00000 n 
-0000088395 00000 n 
-0000088674 00000 n 
-0000088928 00000 n 
-0000089181 00000 n 
-0000089436 00000 n 
-0000089696 00000 n 
-0000089950 00000 n 
-0000090204 00000 n 
-0000090461 00000 n 
-0000090718 00000 n 
-0000090975 00000 n 
-0000091145 00000 n 
-0000091315 00000 n 
-0000091485 00000 n 
-0000091655 00000 n 
-0000091825 00000 n 
-0000091995 00000 n 
-0000092165 00000 n 
-0000092335 00000 n 
-0000092505 00000 n 
-0000092791 00000 n 
-0000093026 00000 n 
-0000093307 00000 n 
-0000093542 00000 n 
-0000093712 00000 n 
-0000093882 00000 n 
-0000094882 00000 n 
-0000095052 00000 n 
-0000095326 00000 n 
-0000095595 00000 n 
-0000095866 00000 n 
-0000096133 00000 n 
-0000096400 00000 n 
-0000096662 00000 n 
-0000096832 00000 n 
-0000097002 00000 n 
-0000097172 00000 n 
-0000097342 00000 n 
-0000097512 00000 n 
-0000097783 00000 n 
-0000098055 00000 n 
-0000098324 00000 n 
-0000098593 00000 n 
-0000098865 00000 n 
-0000099035 00000 n 
-0000099205 00000 n 
-0000099375 00000 n 
-0000099545 00000 n 
-0000099715 00000 n 
-0000099885 00000 n 
-0000100055 00000 n 
-0000100225 00000 n 
-0000100395 00000 n 
-0000100565 00000 n 
-0000100735 00000 n 
-0000100905 00000 n 
-0000101183 00000 n 
-0000101353 00000 n 
-0000101523 00000 n 
-0000101693 00000 n 
-0000101863 00000 n 
-0000102124 00000 n 
-0000102294 00000 n 
-0000102464 00000 n 
-0000102634 00000 n 
-0000102804 00000 n 
-0000102974 00000 n 
-0000103144 00000 n 
-0000103314 00000 n 
-0000103484 00000 n 
-0000103752 00000 n 
-0000104017 00000 n 
-0000104285 00000 n 
-0000104455 00000 n 
-0000104624 00000 n 
-0000104794 00000 n 
-0000104964 00000 n 
-0000105134 00000 n 
-0000105304 00000 n 
-0000105474 00000 n 
-0000105644 00000 n 
-0000105814 00000 n 
-0000106078 00000 n 
-0000106248 00000 n 
-0000106418 00000 n 
-0000106588 00000 n 
-0000106758 00000 n 
-0000106928 00000 n 
-0000107098 00000 n 
-0000107267 00000 n 
-0000107437 00000 n 
-0000107605 00000 n 
-0000107775 00000 n 
-0000107945 00000 n 
-0000108115 00000 n 
-0000108285 00000 n 
-0000108455 00000 n 
-0000108623 00000 n 
-0000108793 00000 n 
-0000108963 00000 n 
-0000109133 00000 n 
-0000109303 00000 n 
-0000109473 00000 n 
-0000109643 00000 n 
-0000109813 00000 n 
-0000109983 00000 n 
-0000110153 00000 n 
-0000110426 00000 n 
-0000110700 00000 n 
-0000110971 00000 n 
-0000111242 00000 n 
-0000111516 00000 n 
-0000111686 00000 n 
-0000111856 00000 n 
-0000112132 00000 n 
-0000113081 00000 n 
-0000113358 00000 n 
-0000113632 00000 n 
-0000113906 00000 n 
-0000114183 00000 n 
-0000114353 00000 n 
-0000114523 00000 n 
-0000114693 00000 n 
-0000114863 00000 n 
-0000115033 00000 n 
-0000115203 00000 n 
-0000115373 00000 n 
-0000115543 00000 n 
-0000115713 00000 n 
-0000115883 00000 n 
-0000116053 00000 n 
-0000116223 00000 n 
-0000116393 00000 n 
-0000116563 00000 n 
-0000116733 00000 n 
-0000116903 00000 n 
-0000117073 00000 n 
-0000117243 00000 n 
-0000117413 00000 n 
-0000117583 00000 n 
-0000117753 00000 n 
-0000118020 00000 n 
-0000118288 00000 n 
-0000118553 00000 n 
-0000118818 00000 n 
-0000119086 00000 n 
-0000119256 00000 n 
-0000119426 00000 n 
-0000119696 00000 n 
-0000119967 00000 n 
-0000120235 00000 n 
-0000120503 00000 n 
-0000120774 00000 n 
-0000120944 00000 n 
-0000121114 00000 n 
-0000121284 00000 n 
-0000121454 00000 n 
-0000121624 00000 n 
-0000121794 00000 n 
-0000122371 00000 n 
-0000122541 00000 n 
-0000122711 00000 n 
-0000122881 00000 n 
-0000123051 00000 n 
-0000123221 00000 n 
-0000123391 00000 n 
-0000123561 00000 n 
-0000123731 00000 n 
-0000123901 00000 n 
-0000124194 00000 n 
-0000124304 00000 n 
-0000124563 00000 n 
-0000124640 00000 n 
-0000124778 00000 n 
-0000124903 00000 n 
-0000125033 00000 n 
-0000125376 00000 n 
-0000126456 00000 n 
-0000126582 00000 n 
-0000127688 00000 n 
-0000127814 00000 n 
-0000136231 00000 n 
-0000144593 00000 n 
-0000152921 00000 n 
-0000161773 00000 n 
-0000170429 00000 n 
-0000179345 00000 n 
-0000188595 00000 n 
-0000196270 00000 n 
-0000203247 00000 n 
-0000210461 00000 n 
-0000218183 00000 n 
-0000224727 00000 n 
-0000232130 00000 n 
-0000239283 00000 n 
-0000246720 00000 n 
-0000253913 00000 n 
-0000260966 00000 n 
-0000268386 00000 n 
-0000275812 00000 n 
-0000282705 00000 n 
-0000290297 00000 n 
-0000296900 00000 n 
-0000303154 00000 n 
-0000311866 00000 n 
-0000321916 00000 n 
-0000332651 00000 n 
-0000342467 00000 n 
-0000344645 00000 n 
-0000355974 00000 n 
-0000366553 00000 n 
-0000377956 00000 n 
-0000388083 00000 n 
-0000399730 00000 n 
-0000405762 00000 n 
-0000407472 00000 n 
-0000407945 00000 n 
-0000407980 00000 n 
-0000408015 00000 n 
-0000408050 00000 n 
-0000408085 00000 n 
-0000408120 00000 n 
-0000408155 00000 n 
-0000408190 00000 n 
-0000408225 00000 n 
-0000408260 00000 n 
-0000408295 00000 n 
-0000408330 00000 n 
-0000408365 00000 n 
-0000408400 00000 n 
-0000408436 00000 n 
-0000408472 00000 n 
-0000408508 00000 n 
-0000408544 00000 n 
-0000408580 00000 n 
-0000408616 00000 n 
-0000408652 00000 n 
-0000408688 00000 n 
-0000408724 00000 n 
-0000408760 00000 n 
-0000408796 00000 n 
-0000408832 00000 n 
-0000408868 00000 n 
-0000408904 00000 n 
-0000408940 00000 n 
-0000408976 00000 n 
-0000409012 00000 n 
-0000409048 00000 n 
-0000409084 00000 n 
-0000409120 00000 n 
-0000409156 00000 n 
-0000409192 00000 n 
-0000409228 00000 n 
-0000409264 00000 n 
-0000409300 00000 n 
+0000017084 00000 n 
+0000017333 00000 n 
+0000017579 00000 n 
+0000017825 00000 n 
+0000018074 00000 n 
+0000018243 00000 n 
+0000018412 00000 n 
+0000018581 00000 n 
+0000018750 00000 n 
+0000018920 00000 n 
+0000019090 00000 n 
+0000019260 00000 n 
+0000019430 00000 n 
+0000019600 00000 n 
+0000019770 00000 n 
+0000019940 00000 n 
+0000020110 00000 n 
+0000020280 00000 n 
+0000020450 00000 n 
+0000020620 00000 n 
+0000020847 00000 n 
+0000021073 00000 n 
+0000021301 00000 n 
+0000021534 00000 n 
+0000021761 00000 n 
+0000021988 00000 n 
+0000022158 00000 n 
+0000022388 00000 n 
+0000022618 00000 n 
+0000022848 00000 n 
+0000023018 00000 n 
+0000023188 00000 n 
+0000023358 00000 n 
+0000023528 00000 n 
+0000023698 00000 n 
+0000023868 00000 n 
+0000024038 00000 n 
+0000024208 00000 n 
+0000024378 00000 n 
+0000024548 00000 n 
+0000024718 00000 n 
+0000024888 00000 n 
+0000025057 00000 n 
+0000025227 00000 n 
+0000025395 00000 n 
+0000025565 00000 n 
+0000025735 00000 n 
+0000025905 00000 n 
+0000026075 00000 n 
+0000026245 00000 n 
+0000026415 00000 n 
+0000026583 00000 n 
+0000026753 00000 n 
+0000026922 00000 n 
+0000027092 00000 n 
+0000027262 00000 n 
+0000027432 00000 n 
+0000027602 00000 n 
+0000027772 00000 n 
+0000027942 00000 n 
+0000028112 00000 n 
+0000028282 00000 n 
+0000028452 00000 n 
+0000028622 00000 n 
+0000028792 00000 n 
+0000028962 00000 n 
+0000029132 00000 n 
+0000029302 00000 n 
+0000029472 00000 n 
+0000029642 00000 n 
+0000029812 00000 n 
+0000029982 00000 n 
+0000030152 00000 n 
+0000030322 00000 n 
+0000030568 00000 n 
+0000030737 00000 n 
+0000030907 00000 n 
+0000031075 00000 n 
+0000031245 00000 n 
+0000031415 00000 n 
+0000031585 00000 n 
+0000032483 00000 n 
+0000032653 00000 n 
+0000032823 00000 n 
+0000032993 00000 n 
+0000033163 00000 n 
+0000033333 00000 n 
+0000033503 00000 n 
+0000033673 00000 n 
+0000033843 00000 n 
+0000034013 00000 n 
+0000034183 00000 n 
+0000034353 00000 n 
+0000034523 00000 n 
+0000034693 00000 n 
+0000034944 00000 n 
+0000035151 00000 n 
+0000035321 00000 n 
+0000035491 00000 n 
+0000035661 00000 n 
+0000035831 00000 n 
+0000036001 00000 n 
+0000036171 00000 n 
+0000036341 00000 n 
+0000036511 00000 n 
+0000036681 00000 n 
+0000036851 00000 n 
+0000037021 00000 n 
+0000037191 00000 n 
+0000037361 00000 n 
+0000037531 00000 n 
+0000037701 00000 n 
+0000037956 00000 n 
+0000038206 00000 n 
+0000038454 00000 n 
+0000038699 00000 n 
+0000038907 00000 n 
+0000039150 00000 n 
+0000039320 00000 n 
+0000039490 00000 n 
+0000039748 00000 n 
+0000040001 00000 n 
+0000040252 00000 n 
+0000040500 00000 n 
+0000040746 00000 n 
+0000040916 00000 n 
+0000041086 00000 n 
+0000041256 00000 n 
+0000041426 00000 n 
+0000041596 00000 n 
+0000041766 00000 n 
+0000041936 00000 n 
+0000042106 00000 n 
+0000042276 00000 n 
+0000042446 00000 n 
+0000042616 00000 n 
+0000042786 00000 n 
+0000042956 00000 n 
+0000043126 00000 n 
+0000043389 00000 n 
+0000043652 00000 n 
+0000043916 00000 n 
+0000044180 00000 n 
+0000044446 00000 n 
+0000044712 00000 n 
+0000044973 00000 n 
+0000045234 00000 n 
+0000045497 00000 n 
+0000045760 00000 n 
+0000046018 00000 n 
+0000046276 00000 n 
+0000046535 00000 n 
+0000046794 00000 n 
+0000047050 00000 n 
+0000047306 00000 n 
+0000047566 00000 n 
+0000047826 00000 n 
+0000048084 00000 n 
+0000048342 00000 n 
+0000048598 00000 n 
+0000048854 00000 n 
+0000049113 00000 n 
+0000049372 00000 n 
+0000049626 00000 n 
+0000049880 00000 n 
+0000050133 00000 n 
+0000050386 00000 n 
+0000050556 00000 n 
+0000050726 00000 n 
+0000050971 00000 n 
+0000051217 00000 n 
+0000051460 00000 n 
+0000051703 00000 n 
+0000051949 00000 n 
+0000052119 00000 n 
+0000052289 00000 n 
+0000053289 00000 n 
+0000053459 00000 n 
+0000053629 00000 n 
+0000053799 00000 n 
+0000053969 00000 n 
+0000054139 00000 n 
+0000054309 00000 n 
+0000054479 00000 n 
+0000054649 00000 n 
+0000054819 00000 n 
+0000054989 00000 n 
+0000055252 00000 n 
+0000055422 00000 n 
+0000055592 00000 n 
+0000055762 00000 n 
+0000055932 00000 n 
+0000056102 00000 n 
+0000056272 00000 n 
+0000056442 00000 n 
+0000056612 00000 n 
+0000056782 00000 n 
+0000056952 00000 n 
+0000057219 00000 n 
+0000057389 00000 n 
+0000057559 00000 n 
+0000057729 00000 n 
+0000057899 00000 n 
+0000058069 00000 n 
+0000058239 00000 n 
+0000058409 00000 n 
+0000058579 00000 n 
+0000058749 00000 n 
+0000058919 00000 n 
+0000059089 00000 n 
+0000059259 00000 n 
+0000059429 00000 n 
+0000059671 00000 n 
+0000059908 00000 n 
+0000060147 00000 n 
+0000060382 00000 n 
+0000060617 00000 n 
+0000060847 00000 n 
+0000061076 00000 n 
+0000061246 00000 n 
+0000061416 00000 n 
+0000061586 00000 n 
+0000061756 00000 n 
+0000061926 00000 n 
+0000062162 00000 n 
+0000062332 00000 n 
+0000062502 00000 n 
+0000062672 00000 n 
+0000062842 00000 n 
+0000063012 00000 n 
+0000063182 00000 n 
+0000063351 00000 n 
+0000063521 00000 n 
+0000063691 00000 n 
+0000063861 00000 n 
+0000064031 00000 n 
+0000064201 00000 n 
+0000064371 00000 n 
+0000064541 00000 n 
+0000064778 00000 n 
+0000064948 00000 n 
+0000065118 00000 n 
+0000065288 00000 n 
+0000065458 00000 n 
+0000065628 00000 n 
+0000065798 00000 n 
+0000065963 00000 n 
+0000066133 00000 n 
+0000066302 00000 n 
+0000066472 00000 n 
+0000066642 00000 n 
+0000066812 00000 n 
+0000066982 00000 n 
+0000067152 00000 n 
+0000067400 00000 n 
+0000067649 00000 n 
+0000067895 00000 n 
+0000068141 00000 n 
+0000068390 00000 n 
+0000068560 00000 n 
+0000068730 00000 n 
+0000068900 00000 n 
+0000069070 00000 n 
+0000069240 00000 n 
+0000070181 00000 n 
+0000070351 00000 n 
+0000070521 00000 n 
+0000070691 00000 n 
+0000070861 00000 n 
+0000071031 00000 n 
+0000071201 00000 n 
+0000071371 00000 n 
+0000071541 00000 n 
+0000071711 00000 n 
+0000071881 00000 n 
+0000072051 00000 n 
+0000072221 00000 n 
+0000072391 00000 n 
+0000072561 00000 n 
+0000072731 00000 n 
+0000072901 00000 n 
+0000073142 00000 n 
+0000073384 00000 n 
+0000073623 00000 n 
+0000073862 00000 n 
+0000074105 00000 n 
+0000074347 00000 n 
+0000074517 00000 n 
+0000074687 00000 n 
+0000074857 00000 n 
+0000075027 00000 n 
+0000075197 00000 n 
+0000075367 00000 n 
+0000075537 00000 n 
+0000075707 00000 n 
+0000075877 00000 n 
+0000076047 00000 n 
+0000076217 00000 n 
+0000076387 00000 n 
+0000076557 00000 n 
+0000076798 00000 n 
+0000077040 00000 n 
+0000077279 00000 n 
+0000077518 00000 n 
+0000077766 00000 n 
+0000078014 00000 n 
+0000078256 00000 n 
+0000078518 00000 n 
+0000078780 00000 n 
+0000079043 00000 n 
+0000079306 00000 n 
+0000079571 00000 n 
+0000079836 00000 n 
+0000080096 00000 n 
+0000080356 00000 n 
+0000080618 00000 n 
+0000080880 00000 n 
+0000081137 00000 n 
+0000081394 00000 n 
+0000081652 00000 n 
+0000081910 00000 n 
+0000082165 00000 n 
+0000082420 00000 n 
+0000082679 00000 n 
+0000082938 00000 n 
+0000083195 00000 n 
+0000083452 00000 n 
+0000083707 00000 n 
+0000083962 00000 n 
+0000084220 00000 n 
+0000084478 00000 n 
+0000084731 00000 n 
+0000084984 00000 n 
+0000085236 00000 n 
+0000085488 00000 n 
+0000085715 00000 n 
+0000085941 00000 n 
+0000086169 00000 n 
+0000086402 00000 n 
+0000086629 00000 n 
+0000086856 00000 n 
+0000087086 00000 n 
+0000087316 00000 n 
+0000087546 00000 n 
+0000087716 00000 n 
+0000087886 00000 n 
+0000088056 00000 n 
+0000088226 00000 n 
+0000088396 00000 n 
+0000088566 00000 n 
+0000088736 00000 n 
+0000088906 00000 n 
+0000089076 00000 n 
+0000089335 00000 n 
+0000089543 00000 n 
+0000089797 00000 n 
+0000090005 00000 n 
+0000090175 00000 n 
+0000090345 00000 n 
+0000091345 00000 n 
+0000091515 00000 n 
+0000091762 00000 n 
+0000092004 00000 n 
+0000092248 00000 n 
+0000092488 00000 n 
+0000092728 00000 n 
+0000092963 00000 n 
+0000093133 00000 n 
+0000093303 00000 n 
+0000093473 00000 n 
+0000093643 00000 n 
+0000093813 00000 n 
+0000094057 00000 n 
+0000094302 00000 n 
+0000094544 00000 n 
+0000094786 00000 n 
+0000095031 00000 n 
+0000095201 00000 n 
+0000095371 00000 n 
+0000095541 00000 n 
+0000095711 00000 n 
+0000095881 00000 n 
+0000096051 00000 n 
+0000096221 00000 n 
+0000096391 00000 n 
+0000096561 00000 n 
+0000096731 00000 n 
+0000096901 00000 n 
+0000097071 00000 n 
+0000097322 00000 n 
+0000097492 00000 n 
+0000097662 00000 n 
+0000097832 00000 n 
+0000098002 00000 n 
+0000098236 00000 n 
+0000098406 00000 n 
+0000098576 00000 n 
+0000098746 00000 n 
+0000098916 00000 n 
+0000099086 00000 n 
+0000099256 00000 n 
+0000099426 00000 n 
+0000099596 00000 n 
+0000099837 00000 n 
+0000100075 00000 n 
+0000100316 00000 n 
+0000100486 00000 n 
+0000100655 00000 n 
+0000100825 00000 n 
+0000100995 00000 n 
+0000101165 00000 n 
+0000101335 00000 n 
+0000101505 00000 n 
+0000101675 00000 n 
+0000101845 00000 n 
+0000102082 00000 n 
+0000102252 00000 n 
+0000102422 00000 n 
+0000102592 00000 n 
+0000102762 00000 n 
+0000102932 00000 n 
+0000103102 00000 n 
+0000103271 00000 n 
+0000103441 00000 n 
+0000103609 00000 n 
+0000103779 00000 n 
+0000103949 00000 n 
+0000104119 00000 n 
+0000104289 00000 n 
+0000104459 00000 n 
+0000104627 00000 n 
+0000104797 00000 n 
+0000104967 00000 n 
+0000105137 00000 n 
+0000105307 00000 n 
+0000105477 00000 n 
+0000105647 00000 n 
+0000105817 00000 n 
+0000105987 00000 n 
+0000106157 00000 n 
+0000106403 00000 n 
+0000106650 00000 n 
+0000106894 00000 n 
+0000107138 00000 n 
+0000107385 00000 n 
+0000107555 00000 n 
+0000107725 00000 n 
+0000107974 00000 n 
+0000108923 00000 n 
+0000109173 00000 n 
+0000109420 00000 n 
+0000109667 00000 n 
+0000109917 00000 n 
+0000110087 00000 n 
+0000110257 00000 n 
+0000110427 00000 n 
+0000110597 00000 n 
+0000110767 00000 n 
+0000110937 00000 n 
+0000111107 00000 n 
+0000111277 00000 n 
+0000111447 00000 n 
+0000111617 00000 n 
+0000111787 00000 n 
+0000111957 00000 n 
+0000112127 00000 n 
+0000112297 00000 n 
+0000112467 00000 n 
+0000112637 00000 n 
+0000112807 00000 n 
+0000112977 00000 n 
+0000113147 00000 n 
+0000113317 00000 n 
+0000113487 00000 n 
+0000113727 00000 n 
+0000113968 00000 n 
+0000114206 00000 n 
+0000114444 00000 n 
+0000114685 00000 n 
+0000114855 00000 n 
+0000115025 00000 n 
+0000115268 00000 n 
+0000115512 00000 n 
+0000115753 00000 n 
+0000115994 00000 n 
+0000116238 00000 n 
+0000116408 00000 n 
+0000116578 00000 n 
+0000116748 00000 n 
+0000116918 00000 n 
+0000117088 00000 n 
+0000117258 00000 n 
+0000117835 00000 n 
+0000118005 00000 n 
+0000118175 00000 n 
+0000118345 00000 n 
+0000118515 00000 n 
+0000118685 00000 n 
+0000118855 00000 n 
+0000119025 00000 n 
+0000119195 00000 n 
+0000119365 00000 n 
+0000119658 00000 n 
+0000119768 00000 n 
+0000120027 00000 n 
+0000120104 00000 n 
+0000120242 00000 n 
+0000120367 00000 n 
+0000120497 00000 n 
+0000120840 00000 n 
+0000121920 00000 n 
+0000122046 00000 n 
+0000123152 00000 n 
+0000123278 00000 n 
+0000131695 00000 n 
+0000140057 00000 n 
+0000148385 00000 n 
+0000157237 00000 n 
+0000165893 00000 n 
+0000174809 00000 n 
+0000184059 00000 n 
+0000191734 00000 n 
+0000198711 00000 n 
+0000205925 00000 n 
+0000213647 00000 n 
+0000220191 00000 n 
+0000227594 00000 n 
+0000234747 00000 n 
+0000242184 00000 n 
+0000249377 00000 n 
+0000256430 00000 n 
+0000263850 00000 n 
+0000271276 00000 n 
+0000278169 00000 n 
+0000285761 00000 n 
+0000292364 00000 n 
+0000298618 00000 n 
+0000307330 00000 n 
+0000317380 00000 n 
+0000328115 00000 n 
+0000337931 00000 n 
+0000340109 00000 n 
+0000351438 00000 n 
+0000362017 00000 n 
+0000373420 00000 n 
+0000383547 00000 n 
+0000395194 00000 n 
+0000401226 00000 n 
+0000402936 00000 n 
+0000403409 00000 n 
+0000403444 00000 n 
+0000403479 00000 n 
+0000403514 00000 n 
+0000403549 00000 n 
+0000403584 00000 n 
+0000403619 00000 n 
+0000403654 00000 n 
+0000403689 00000 n 
+0000403724 00000 n 
+0000403759 00000 n 
+0000403794 00000 n 
+0000403829 00000 n 
+0000403864 00000 n 
+0000403900 00000 n 
+0000403936 00000 n 
+0000403972 00000 n 
+0000404008 00000 n 
+0000404044 00000 n 
+0000404080 00000 n 
+0000404116 00000 n 
+0000404152 00000 n 
+0000404188 00000 n 
+0000404224 00000 n 
+0000404260 00000 n 
+0000404296 00000 n 
+0000404332 00000 n 
+0000404368 00000 n 
+0000404404 00000 n 
+0000404440 00000 n 
+0000404476 00000 n 
+0000404512 00000 n 
+0000404548 00000 n 
+0000404584 00000 n 
+0000404620 00000 n 
+0000404656 00000 n 
+0000404692 00000 n 
+0000404728 00000 n 
+0000404764 00000 n 
 trailer
 <<
 /ID 
-[<d8e2be8efb8ae43b2283410c600ca025><d8e2be8efb8ae43b2283410c600ca025>]
+[<24b23e3e46a67e68d8c5fe356caa44eb><24b23e3e46a67e68d8c5fe356caa44eb>]
 % ReportLab generated PDF document -- digest (http://www.reportlab.com)
 
 /Info 595 0 R
@@ -17219,5 +17219,5 @@ trailer
 /Size 680
 >>
 startxref
-409336
+404800
 %%EOF

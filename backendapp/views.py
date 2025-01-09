@@ -543,10 +543,14 @@ def creer_patient(request):
     except Medecin.DoesNotExist:
         return Response({'error': 'Médecin non trouvé.'}, status=status.HTTP_404_NOT_FOUND)
 
-    # Créer l'instance DossierPatient
+
+     # Créer l'instance DossierPatient
+    antecedents = data.get('antécédents', '').strip()
+    # Create the DossierPatient instance
     dossier_patient = DossierPatient.objects.create(
         etat="actif",  # État par défaut du dossier
-        antécédents="aucun"  # Antécédents vides par défaut
+        antécédents=antecedents  # Antécédents vides par défaut
+
     )
 
     # Mapper les champs de données selon l'entrée JSON
@@ -579,6 +583,9 @@ def creer_patient(request):
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
     # Si le serializer n'est pas valide, retourner l'erreur
+    # Destroy the dossierPatient field
+    dossier_patient.delete()
+
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
