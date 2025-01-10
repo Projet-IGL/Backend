@@ -13,6 +13,7 @@ django-multiselectfield = "*"
 pillow = "*"
 pytest = "*"
 selenium = "*"
+pipfile = "*"
 
 [dev-packages]
 
