@@ -11,7 +11,7 @@ relatives à la consultation, ainsi que la validation des informations du patien
 Les réponses sont formatées en JSON, et les erreurs sont gérées de manière appropriée
 en renvoyant des codes d'état HTTP pertinents.
 """
-
+from .serializers import BilanRadiologiqueSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.authtoken.models import Token
@@ -36,7 +36,12 @@ from django.utils.dateparse import parse_date
 from rest_framework.decorators import api_view
 from datetime import datetime
 from django.utils.timezone import make_aware 
-
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Medecin, DossierPatient, User, Patient
+from .serializers import PatientSerializer
 @api_view(['POST'])
 def login_view(request):
     """
