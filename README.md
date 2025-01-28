@@ -96,8 +96,11 @@ Pour générer la version PDF de la documentation, exécutez :
 cd docs/source
 sphinx-build -b html . _build/html
 ```
-Vous pouvez consulter le repetroire local de votre clone et aller dans Backend\build\pdf pour y trouver Gestion_DPI_backend.pdf qui est la documentation du code du back end 
----
+Vous pouvez consulter le repetroire local de votre clone et aller dans
+```bash
+Backend\build\pdf
+``` 
+pour y trouver Gestion_DPI_backend.pdf qui est la documentation du code du back end 
 
 ## Contact
 
