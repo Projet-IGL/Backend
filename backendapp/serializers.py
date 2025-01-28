@@ -3,17 +3,10 @@ from .models import User, Administrateur, Medecin, Patient, Infirmier, Laboranti
 
 class UserSerializer(serializers.ModelSerializer):
     """
-    Serializer for the base User model.
-    This will handle common fields across all user roles.
+    Sérialiseur pour le modèle utilisateur de base. Gère les champs communs à tous les rôles d'utilisateur.
+    Le champ mot de passe est écrit uniquement, il ne sera pas retourné lors de la sérialisation.
     """
-    password = serializers.CharField(write_only=True)  # Ensure password is write-only
-
-    """
-    the password field is set as write-only in the serializer. 
-    This means that when you serialize a User instance,
-    the password is intentionally excluded from the output
-    The password is meant to be set, not retrieved.
-    """
+    password = serializers.CharField(write_only=True)
 
     class Meta:
         model = User
@@ -24,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class DossierPatientSerializer(serializers.ModelSerializer):
     """
-    Serializer for DossierPatient model, linking to the Patient model.
+    Sérialiseur pour le modèle DossierPatient, liant un patient spécifique au dossier.
     """
     patient = serializers.PrimaryKeyRelatedField(queryset=Patient.objects.all())
     
@@ -34,8 +27,7 @@ class DossierPatientSerializer(serializers.ModelSerializer):
 
 class AdministrateurSerializer(serializers.ModelSerializer):
     """
-    Serializer for Administrateur role.
-    Inherits from the base UserSerializer.
+    Sérialiseur pour le rôle d'Administrateur. Hérite des champs du modèle User.
     """
     class Meta:
         model = Administrateur
@@ -43,7 +35,7 @@ class AdministrateurSerializer(serializers.ModelSerializer):
 
 class MedecinSerializer(serializers.ModelSerializer):
     """
-    Serializer for Medecin role.
+    Sérialiseur pour le rôle de Médecin. Gère les informations spécifiques au médecin.
     """
     class Meta:
         model = Medecin
@@ -51,16 +43,11 @@ class MedecinSerializer(serializers.ModelSerializer):
 
 class PatientSerializer(serializers.ModelSerializer):
     """
-    Serializer for Patient role.
-    Handles nested relationship with Medecin (medecin_traitant) and adds DossierPatient.
+    Sérialiseur pour le rôle de Patient. Gère la relation avec le médecin traitant et le dossier du patient.
+    Les informations du médecin traitant et du dossier sont sérialisées de manière imbriquée.
     """
-    """ medecin_traitant = serializers.PrimaryKeyRelatedField(
-        queryset=Medecin.objects.all(), required=False
-    ) 
-    """
-
-    medecin_traitant = MedecinSerializer(allow_null=True, required=False) # Nested Medecin Traitant serializer
-    dossier_patient = DossierPatientSerializer(allow_null=True, required=False)  # Nested DossierPatient serializer
+    medecin_traitant = MedecinSerializer(allow_null=True, required=False)
+    dossier_patient = DossierPatientSerializer(allow_null=True, required=False)
 
     class Meta:
         model = Patient
@@ -68,7 +55,7 @@ class PatientSerializer(serializers.ModelSerializer):
 
 class InfirmierSerializer(serializers.ModelSerializer):
     """
-    Serializer for Infirmier role.
+    Sérialiseur pour le rôle d'Infirmier. Gère les informations spécifiques à l'infirmier.
     """
     class Meta:
         model = Infirmier
@@ -76,7 +63,7 @@ class InfirmierSerializer(serializers.ModelSerializer):
 
 class LaborantinSerializer(serializers.ModelSerializer):
     """
-    Serializer for Laborantin role.
+    Sérialiseur pour le rôle de Laborantin. Gère les informations spécifiques au laborantin.
     """
     class Meta:
         model = Laborantin
@@ -84,58 +71,58 @@ class LaborantinSerializer(serializers.ModelSerializer):
 
 class RadiologueSerializer(serializers.ModelSerializer):
     """
-    Serializer for Radiologue role.
+    Sérialiseur pour le rôle de Radiologue. Gère les informations spécifiques au radiologue.
     """
     class Meta:
         model = Radiologue
         fields = '__all__'
 
-
-
 class ConsultationSerializer(serializers.ModelSerializer):
     """
-    Serializer for Consultation role.
+    Sérialiseur pour la consultation d'un patient. Gère les informations de la consultation ainsi que le médecin consultant.
     """
     medecinConsultant = MedecinSerializer()
+
     class Meta:
         model = Consultation
         fields = '__all__'
 
-
 class SoinsSerializer(serializers.ModelSerializer):
     """
-    Serializer for les soins.
+    Sérialiseur pour les soins administrés au patient. Gère toutes les informations liées aux soins médicaux.
     """
     class Meta:
         model = Soins
         fields = '__all__'
 
-
 class MedicamentsSerializer(serializers.ModelSerializer):
     """
-    Serializer for les soins.
+    Sérialiseur pour les médicaments prescrits. Gère les informations des médicaments associés à un soin ou une ordonnance.
     """
     class Meta:
         model = Medicament
         fields = '__all__'
 
-
 class OrdonnaceSerializer(serializers.ModelSerializer):
     """
-    Serializer for les soins.
+    Sérialiseur pour les ordonnances prescrites. Gère les informations des ordonnances.
     """
     class Meta:
         model = Ordonnance
         fields = '__all__'
 
-
 class BilanBiologiqueSerializer(serializers.ModelSerializer):
+    """
+    Sérialiseur pour le bilan biologique. Gère les informations relatives aux bilans biologiques effectués sur le patient.
+    """
     class Meta:
         model = BilanBiologique
-        fields = '__all__' 
+        fields = '__all__'
 
 class BilanRadiologiqueSerializer(serializers.ModelSerializer):
+    """
+    Sérialiseur pour le bilan radiologique. Gère les informations relatives aux bilans radiologiques effectués sur le patient.
+    """
     class Meta:
         model = BilanRadiologique
-        fields = '__all__' 
-
+        fields = '__all__'

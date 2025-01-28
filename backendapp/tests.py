@@ -1,6 +1,12 @@
-from django.test import TestCase
+"""
+Tests unitaires pour les vues de l'application backendapp.
 
-# Create your tests here.
+Ce fichier contient les tests associés aux vues du backendapp. Les tests visent à vérifier le bon fonctionnement
+des API créées pour interagir avec les modèles et les données de l'application.
+
+Ces tests sont utilisés pour s'assurer que les vues du backend fonctionnent comme prévu et renvoient
+les bonnes informations ou des erreurs appropriées.
+"""
 
 from django.test import TestCase
 from backendapp.models import Medecin, Patient, Ordonnance, DossierPatient, Consultation
@@ -9,9 +15,22 @@ from django.utils import timezone
 
 
 class OrdonnanceModelTestCase(TestCase):
+    """
+    Test des fonctionnalités liées au modèle Ordonnance.
+    
+    Cette classe regroupe les tests pour vérifier :
+    - La création d'une ordonnance valide.
+    - La bonne association d'un dossier patient avec un patient et une consultation.
+    """
 
     def setUp(self):
-        # Création d'un médecin 
+        """
+        Préparation des données de test avant chaque test.
+        
+        Cette méthode crée un médecin, un patient, un dossier patient et une consultation
+        nécessaires pour les tests de l'ordonnance.
+        """
+        # Création d'un médecin
         self.medecin = Medecin.objects.create_user(
             username='medecin123456789', 
             first_name='Ahmad',  
@@ -41,7 +60,6 @@ class OrdonnanceModelTestCase(TestCase):
             adresse='Oran', 
             numero_telephone='0612345678',
             date_naissance=datetime(2004, 11, 20),
-
             nss='12345678912345',
             telephone_urgence='061255678',
             mutuelle='mutuelle',
@@ -59,16 +77,25 @@ class OrdonnanceModelTestCase(TestCase):
         )
 
     def test_ordonnance_creation(self):
-        # Test de création d'une ordonnance valide
+        """
+        Tester la création d'une ordonnance valide.
+        
+        Ce test vérifie que l'ordonnance est correctement créée et que 
+        la relation entre l'ordonnance, le dossier patient et la consultation est correcte.
+        """
         ordonnance = Ordonnance.objects.create(
             dossier_patient=self.dossier_patient,
             consultation=self.consultation
         )
         
-        # Vérification de la relation entre l'ordonnance et le dossier patient er la consultation
+        # Vérification de la relation entre l'ordonnance et le dossier patient et la consultation
         self.assertEqual(ordonnance.dossier_patient, self.dossier_patient)
         self.assertEqual(ordonnance.consultation, self.consultation)
 
     def test_dossier_patient_association(self):
-        # Vérifier que le dossier patient est bien associé à son patient
+        """
+        Vérifier que le dossier patient est bien associé à son patient.
+        
+        Ce test assure que la relation entre le patient et son dossier patient est correctement établie.
+        """
         self.assertEqual(self.dossier_patient.patient, self.patient)
