@@ -220,10 +220,16 @@ class Ordonnance(models.Model):
     Attributes:
         dossier_patient (ForeignKey): Référence au dossier du patient.
         consultation (ForeignKey): Référence à la consultation associée.
+        statut : référence au statut de l'ordonnance (validé, rejeté, en attente) -> géré par le systeme des pharmaciens
     """
     dossier_patient = models.ForeignKey(DossierPatient, on_delete=models.CASCADE, db_column='dossier_patient_id')
     consultation = models.ForeignKey(Consultation, on_delete=models.CASCADE, db_column='consultation_id')
-
+    STATUT_CHOICES = [
+        ('EN_ATTENTE', 'En attente'),
+        ('VALIDE', 'Validé'),
+        ('REJETE', 'Rejeté')
+    ]
+    statut = models.CharField(max_length=20, choices=STATUT_CHOICES, default='EN_ATTENTE')
     def __str__(self):
         return f"Ordonnance for {self.dossier_patient.patient.nom} {self.dossier_patient.patient.prenom}"
 

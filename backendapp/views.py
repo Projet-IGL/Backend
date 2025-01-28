@@ -1199,7 +1199,8 @@ def get_ordonnance_by_nss_and_consultation(request):
                     "duree": medicament.duree,
                 }
                 for medicament in medicaments
-            ]
+            ],
+            "statut": ordonnance.statut
         }
 
         return Response(ordonnance_data, status=status.HTTP_200_OK)
@@ -1209,3 +1210,28 @@ def get_ordonnance_by_nss_and_consultation(request):
 
     except Exception as e:
         return Response({'message': f'Une erreur inattendue est survenue : {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(['PATCH'])
+def modifier_statut_ordonnance(request, ordonnance_id):
+    """
+    Modifie le statut d'une ordonnance via une requête REST.
+    
+    Cette fonction permet de mettre à jour le statut d'une ordonnance existante. Le statut peut être modifié 
+    en fonction des trois états possibles : 'EN_ATTENTE', 'VALIDE' ou 'REJETE'. Cela permet aux pharmaciens 
+    de mettre à jour l'état des ordonnances dans le système.
+    
+    """
+    try:
+        ordonnance = get_object_or_404(Ordonnance, id=ordonnance_id)
+        nouveau_statut = request.data.get('statut', '').strip().upper()
+        
+        if nouveau_statut not in ['EN_ATTENTE', 'VALIDE', 'REJETE']:
+            return Response({'error': 'Statut invalide.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        ordonnance.statut = nouveau_statut
+        ordonnance.save()
+
+        return Response({'message': 'Statut mis à jour avec succès.'}, status=status.HTTP_200_OK)
+    
+    except Exception as e:
+        return Response({'error': 'Erreur lors de la mise à jour du statut.'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
