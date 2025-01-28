@@ -33,15 +33,16 @@ Health est une plateforme conçue pour faciliter les interactions entre le perso
    git clone <repository-url>
    cd <project-directory>
    ```
-2. Configurez l'environnement virtuel et installez les dépendances :
-   ```bash
-   pipenv install
-   ```
-3. Activez l'environnement virtuel :
+2.Activez l'environnement virtuel :
    ```bash
    pipenv shell
    ```
-4. Configurez la base de données :
+3.  Configurez l'environnement virtuel et installez les dépendances :
+   ```bash
+   pipenv install
+   ```
+
+5. Configurez la base de données :
    ```bash
    Veuillez notez qu'il faut changer le mot de passe de la BDD dans settings.py avec votre mot de passe de SQL afin de pouvoir travailler avec une BDD locale sans problème .
     ``` 
@@ -92,9 +93,10 @@ La documentation pour le backend est générée avec Sphinx.
 Pour générer la version PDF de la documentation, exécutez :
 
 ```bash
-sphinx-build -b pdf ./docs/source ./build/pdf
+cd docs/source
+sphinx-build -b html . _build/html
 ```
-
+Vous pouvez consulter le repetroire local de votre clone et aller dans Backend\build\pdf pour y trouver Gestion_DPI_backend.pdf qui est la documentation du code du back end 
 ---
 
 ## Contact
